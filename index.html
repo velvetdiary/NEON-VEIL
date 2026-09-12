@@ -1,0 +1,8079 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+>
+
+<title>VELVET DIARY — NEON VEIL</title>
+
+<style>
+
+/* =========================================================
+   VELVET DIARY
+   NEON VEIL — ULTRA EDITION
+========================================================= */
+
+@import url(
+'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap'
+);
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+
+    overflow:hidden;
+
+    color:white;
+
+    font-family:
+        'Space Grotesk',
+        sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255,0,140,.22),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(100,40,255,.22),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(0,245,255,.13),
+            transparent 35%
+        ),
+
+        #05020a;
+
+    user-select:none;
+
+    touch-action:manipulation;
+
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.aurora{
+
+    position:fixed;
+
+    inset:-30%;
+
+    z-index:-20;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+            ellipse at 20% 30%,
+            rgba(255,0,150,.26),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            ellipse at 80% 40%,
+            rgba(70,20,255,.24),
+            transparent 34%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 80%,
+            rgba(0,245,255,.18),
+            transparent 32%
+        );
+
+    filter:blur(55px);
+
+    animation:
+        aurora 13s ease-in-out infinite alternate;
+
+}
+
+@keyframes aurora{
+
+    0%{
+        transform:
+            translate(-5%,-3%)
+            scale(1);
+    }
+
+    50%{
+        transform:
+            translate(5%,4%)
+            scale(1.08);
+    }
+
+    100%{
+        transform:
+            translate(-3%,6%)
+            scale(1.15);
+    }
+
+}
+
+
+.grid{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-15;
+
+    pointer-events:none;
+
+    opacity:.2;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
+
+}
+
+
+.noise{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:900;
+
+    pointer-events:none;
+
+    opacity:.035;
+
+    background-image:
+
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand{
+
+    position:fixed;
+
+    top:23px;
+    left:27px;
+
+    z-index:100;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    letter-spacing:4px;
+
+}
+
+.brand span{
+
+    color:#ff2ea6;
+
+    text-shadow:
+
+        0 0 10px #ff2ea6,
+
+        0 0 30px
+        rgba(255,46,166,.7);
+
+}
+
+
+/* =========================================================
+   CURSOR
+========================================================= */
+
+.cursor{
+
+    position:fixed;
+
+    width:18px;
+    height:18px;
+
+    border:
+        1px solid #00f5ff;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:1000;
+
+    transform:
+        translate(-50%,-50%);
+
+    box-shadow:
+
+        0 0 10px #00f5ff,
+
+        0 0 25px
+        rgba(0,245,255,.7);
+
+}
+
+.cursor::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+        0 0 10px #fff;
+
+}
+
+.cursor::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-7px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,46,166,.35);
+
+    animation:
+        cursorPulse 1s infinite;
+
+}
+
+@keyframes cursorPulse{
+
+    50%{
+
+        transform:scale(1.4);
+
+        opacity:.2;
+
+    }
+
+}
+
+body.cursor-hover .cursor{
+
+    width:32px;
+    height:32px;
+
+    border-color:#ff2ea6;
+
+    box-shadow:
+
+        0 0 15px #ff2ea6,
+
+        0 0 35px
+        rgba(255,46,166,.8);
+
+}
+
+
+/* =========================================================
+   SCREENS
+========================================================= */
+
+.screen{
+
+    display:none;
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+}
+
+.screen.active{
+
+    display:flex;
+
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.login{
+
+    width:min(510px,100%);
+
+    max-height:94vh;
+
+    overflow:auto;
+
+    padding:
+        38px 28px;
+
+    position:relative;
+
+    border-radius:30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    backdrop-filter:blur(30px);
+
+    box-shadow:
+
+        0 40px 120px
+        rgba(0,0,0,.7),
+
+        inset 0 1px
+        rgba(255,255,255,.08);
+
+    animation:
+        loginIn .8s
+        cubic-bezier(.16,1,.3,1);
+
+}
+
+@keyframes loginIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(45px)
+            scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+.device-note{
+
+    text-align:center;
+
+    margin-bottom:16px;
+
+    padding:
+        8px 12px;
+
+    border-radius:50px;
+
+    background:
+        rgba(0,245,255,.04);
+
+    border:
+        1px solid
+        rgba(0,245,255,.12);
+
+    color:#7fced3;
+
+    font-size:9px;
+
+    letter-spacing:1.5px;
+
+    animation:
+        notePulse 2s infinite;
+
+}
+
+@keyframes notePulse{
+
+    50%{
+
+        border-color:
+            rgba(0,245,255,.3);
+
+        box-shadow:
+            0 0 25px
+            rgba(0,245,255,.06);
+
+    }
+
+}
+
+.mini{
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:9px;
+
+    letter-spacing:5px;
+
+    margin-bottom:17px;
+
+}
+
+.title{
+
+    text-align:center;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:
+        clamp(43px,11vw,75px);
+
+    line-height:.88;
+
+    letter-spacing:-3px;
+
+    background:
+
+        linear-gradient(
+            110deg,
+            #fff,
+            #ff3dac,
+            #9b40ff,
+            #00f5ff,
+            #fff
+        );
+
+    background-size:300% 300%;
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:
+
+        gradient 5s ease infinite,
+
+        glow 2s infinite alternate;
+
+}
+
+@keyframes gradient{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+@keyframes glow{
+
+    from{
+
+        filter:
+            drop-shadow(
+                0 0 5px
+                rgba(255,0,150,.1)
+            );
+
+    }
+
+    to{
+
+        filter:
+            drop-shadow(
+                0 0 22px
+                rgba(255,0,150,.4)
+            );
+
+    }
+
+}
+
+.tagline{
+
+    text-align:center;
+
+    color:#999;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    margin:
+        19px 0 22px;
+
+}
+
+
+/* =========================================================
+   MODES
+========================================================= */
+
+.mode-title{
+
+    text-align:center;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    color:#777;
+
+    font-size:8px;
+
+    letter-spacing:3px;
+
+    margin-bottom:8px;
+
+}
+
+.mode-buttons{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:7px;
+
+    margin-bottom:17px;
+
+}
+
+.mode-btn{
+
+    padding:11px 4px;
+
+    border-radius:12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:#777;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:7px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.mode-btn.active,
+.mode-btn:hover{
+
+    color:#fff;
+
+    border-color:#ff2ea6;
+
+    background:
+        rgba(255,46,166,.08);
+
+    box-shadow:
+        0 0 22px
+        rgba(255,46,166,.15);
+
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input{
+
+    margin-bottom:13px;
+
+}
+
+.input label{
+
+    display:block;
+
+    color:#777;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    margin-bottom:7px;
+
+    text-transform:uppercase;
+
+}
+
+.input input{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    outline:none;
+
+    background:
+        rgba(3,1,7,.75);
+
+    color:white;
+
+    font-size:15px;
+
+    font-family:
+        'Space Grotesk',
+        sans-serif;
+
+    transition:.25s;
+
+}
+
+.input input:focus{
+
+    border-color:#ff2ea6;
+
+    box-shadow:
+        0 0 25px
+        rgba(255,46,166,.13);
+
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.main-btn{
+
+    width:100%;
+
+    padding:17px;
+
+    margin-top:5px;
+
+    border:0;
+
+    border-radius:15px;
+
+    color:white;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-weight:900;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff008c,
+            #8d32ff,
+            #ff008c
+        );
+
+    background-size:200%;
+
+    box-shadow:
+        0 15px 45px
+        rgba(255,0,140,.25);
+
+    animation:
+        buttonGradient 4s linear infinite;
+
+    transition:.2s;
+
+}
+
+@keyframes buttonGradient{
+
+    to{
+        background-position:200%;
+    }
+
+}
+
+.main-btn:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 20px 55px
+        rgba(255,0,140,.45);
+
+}
+
+.main-btn:active{
+
+    transform:
+        scale(.97);
+
+}
+
+.warning{
+
+    display:none;
+
+    text-align:center;
+
+    color:#ff527e;
+
+    font-size:10px;
+
+    margin-top:11px;
+
+}
+
+
+/* =========================================================
+   GAME
+========================================================= */
+
+.game{
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    padding:
+        78px 12px 12px;
+
+}
+
+.top-actions{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    display:flex;
+
+    gap:6px;
+
+    z-index:100;
+
+}
+
+.icon-btn{
+
+    width:36px;
+
+    height:36px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    background:
+        rgba(255,255,255,.04);
+
+    color:#aaa;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    transition:.2s;
+
+}
+
+.icon-btn:hover{
+
+    color:#fff;
+
+    transform:
+        scale(1.1);
+
+    border-color:
+        #00f5ff;
+
+}
+
+
+/* =========================================================
+   HUD
+========================================================= */
+
+.hud{
+
+    width:min(1100px,100%);
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(6,1fr);
+
+    gap:7px;
+
+    margin-bottom:9px;
+
+}
+
+.stat{
+
+    padding:
+        9px 4px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:13px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.045);
+
+    backdrop-filter:blur(15px);
+
+}
+
+.stat-label{
+
+    font-size:6px;
+
+    color:#707070;
+
+    letter-spacing:1.3px;
+
+}
+
+.stat-value{
+
+    margin-top:4px;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    transition:.15s;
+
+}
+
+#score{
+
+    color:#00f5ff;
+
+    text-shadow:
+        0 0 15px #00f5ff;
+
+}
+
+#combo{
+
+    color:#ff2ea6;
+
+    text-shadow:
+        0 0 15px #ff2ea6;
+
+}
+
+#time{
+
+    color:#fff;
+
+}
+
+#level{
+
+    color:#a66cff;
+
+}
+
+#lives{
+
+    color:#ff5577;
+
+}
+
+#accuracy{
+
+    color:#ffd43b;
+
+}
+
+
+/* =========================================================
+   ARENA
+========================================================= */
+
+.arena{
+
+    width:min(1100px,100%);
+
+    height:
+        min(67vh,620px);
+
+    min-height:360px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.11);
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(100,30,255,.11),
+            transparent 40%
+        ),
+
+        #08040f;
+
+    box-shadow:
+
+        inset 0 0 120px
+        rgba(255,0,140,.035),
+
+        0 25px 90px
+        rgba(0,0,0,.6);
+
+    cursor:none;
+
+    transition:.4s;
+
+}
+
+.arena::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:40px 40px;
+
+    pointer-events:none;
+
+}
+
+.arena::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            transparent 35%,
+            rgba(0,0,0,.4)
+        );
+
+}
+
+.arena-message{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#444;
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    pointer-events:none;
+
+    animation:
+        message 1.5s infinite;
+
+    z-index:5;
+
+}
+
+@keyframes message{
+
+    50%{
+        opacity:.3;
+    }
+
+}
+
+
+/* =========================================================
+   TARGET
+========================================================= */
+
+.target{
+
+    position:absolute;
+
+    width:57px;
+    height:57px;
+
+    border-radius:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:10;
+
+    cursor:none;
+
+    animation:
+        targetIn
+        .22s
+        cubic-bezier(.16,1,.3,1);
+
+}
+
+@keyframes targetIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.05)
+            rotate(-100deg);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1)
+            rotate(0);
+
+    }
+
+}
+
+.target::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-9px;
+
+    border-radius:50%;
+
+    border:
+        2px solid
+        rgba(255,46,166,.4);
+
+    animation:
+        pulse .75s infinite;
+
+}
+
+.target::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:8px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.8);
+
+}
+
+.core{
+
+    width:19px;
+    height:19px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+
+        0 0 8px white,
+
+        0 0 20px #ff2ea6,
+
+        0 0 45px #ff2ea6,
+
+        0 0 80px
+        rgba(255,46,166,.7);
+
+    animation:
+        core .5s infinite alternate;
+
+}
+
+@keyframes pulse{
+
+    50%{
+
+        transform:scale(1.28);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes core{
+
+    to{
+
+        transform:scale(1.2);
+
+        box-shadow:
+
+            0 0 8px white,
+
+            0 0 25px #ff2ea6,
+
+            0 0 55px #ff2ea6;
+
+    }
+
+}
+
+
+/* =========================================================
+   GOLD
+========================================================= */
+
+.target.gold{
+
+    width:68px;
+
+    height:68px;
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            #ffd43b
+        );
+
+}
+
+.target.gold::before{
+
+    border-color:
+        rgba(255,212,59,.8);
+
+    animation:
+        goldPulse .5s infinite;
+
+}
+
+.target.gold .core{
+
+    width:23px;
+    height:23px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            white 10%,
+            #fff08a 35%,
+            #ffad00 75%
+        );
+
+    box-shadow:
+
+        0 0 8px white,
+
+        0 0 25px #ffd43b,
+
+        0 0 55px #ff9f00;
+
+}
+
+@keyframes goldPulse{
+
+    50%{
+        transform:scale(1.35);
+    }
+
+}
+
+
+/* =========================================================
+   DIAMOND
+========================================================= */
+
+.target.diamond{
+
+    width:62px;
+
+    height:62px;
+
+    border-radius:18px;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(45deg);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #00f5ff,
+            #765cff
+        );
+
+    box-shadow:
+
+        0 0 20px #00f5ff,
+
+        0 0 50px
+        rgba(0,245,255,.6);
+
+}
+
+.target.diamond::before{
+
+    inset:-7px;
+
+    border-radius:20px;
+
+    border-color:
+        rgba(0,245,255,.5);
+
+}
+
+.target.diamond::after{
+
+    inset:10px;
+
+    border-radius:12px;
+
+}
+
+.target.diamond .core{
+
+    width:15px;
+
+    height:15px;
+
+    background:white;
+
+    box-shadow:
+
+        0 0 10px white,
+
+        0 0 25px #00f5ff;
+
+}
+
+
+/* =========================================================
+   MOVING
+========================================================= */
+
+.target.moving{
+
+    animation:
+
+        targetIn .22s,
+
+        movingTarget
+        1s
+        ease-in-out
+        infinite alternate;
+
+}
+
+@keyframes movingTarget{
+
+    from{
+
+        margin-left:-18px;
+
+        margin-top:-10px;
+
+    }
+
+    to{
+
+        margin-left:18px;
+
+        margin-top:10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   BOSS
+========================================================= */
+
+.target.boss{
+
+    width:120px;
+
+    height:120px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #fff 2%,
+            #ff2ea6 10%,
+            #8d32ff 40%,
+            transparent 70%
+        );
+
+    box-shadow:
+
+        0 0 35px #ff2ea6,
+
+        0 0 90px
+        rgba(255,0,140,.6);
+
+    animation:
+        bossPulse .6s
+        infinite alternate;
+
+}
+
+@keyframes bossPulse{
+
+    to{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.08);
+
+    }
+
+}
+
+.target.boss::before{
+
+    inset:-20px;
+
+    border:
+        3px solid
+        #ff2ea6;
+
+    animation:
+        bossRing 1s linear infinite;
+
+}
+
+@keyframes bossRing{
+
+    to{
+
+        transform:
+            rotate(360deg)
+            scale(1.2);
+
+        opacity:.1;
+
+    }
+
+}
+
+
+/* =========================================================
+   HIT
+========================================================= */
+
+.target.hit{
+
+    animation:
+        hit .32s forwards!important;
+
+}
+
+@keyframes hit{
+
+    to{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(3)
+            rotate(100deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   BOSS BAR
+========================================================= */
+
+.boss-bar{
+
+    display:none;
+
+    position:absolute;
+
+    top:12px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    width:min(400px,70%);
+
+    z-index:30;
+
+}
+
+.boss-bar.show{
+
+    display:block;
+
+}
+
+.boss-name{
+
+    text-align:center;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:9px;
+
+    color:#ff2ea6;
+
+    letter-spacing:3px;
+
+    margin-bottom:4px;
+
+}
+
+.boss-track{
+
+    height:9px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:#180817;
+
+    border:
+        1px solid
+        rgba(255,46,166,.3);
+
+}
+
+.boss-fill{
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff008c,
+            #ff2ea6,
+            #ffd43b
+        );
+
+    box-shadow:
+        0 0 20px #ff2ea6;
+
+    transition:.15s;
+
+}
+
+
+/* =========================================================
+   POWERUPS
+========================================================= */
+
+.powerup{
+
+    position:absolute;
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:19px;
+
+    z-index:12;
+
+    cursor:pointer;
+
+    animation:
+
+        powerupIn .4s,
+
+        powerupFloat
+        1s
+        infinite alternate;
+
+    border:
+        1px solid
+        rgba(255,255,255,.5);
+
+    backdrop-filter:blur(10px);
+
+}
+
+@keyframes powerupIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.2);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes powerupFloat{
+
+    to{
+
+        transform:
+            translateY(-10px)
+            scale(1.05);
+
+    }
+
+}
+
+.magnet{
+
+    background:
+        rgba(255,46,166,.15);
+
+    box-shadow:
+        0 0 30px #ff2ea6;
+
+}
+
+.freeze{
+
+    background:
+        rgba(0,245,255,.12);
+
+    box-shadow:
+        0 0 30px #00f5ff;
+
+}
+
+.double{
+
+    background:
+        rgba(255,212,59,.12);
+
+    box-shadow:
+        0 0 30px #ffd43b;
+
+}
+
+.shield{
+
+    background:
+        rgba(141,53,255,.15);
+
+    box-shadow:
+        0 0 30px #8d35ff;
+
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.bottom{
+
+    width:min(1100px,100%);
+
+    margin-top:8px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.power-wrap{
+
+    flex:1;
+
+}
+
+.power-label{
+
+    color:#666;
+
+    font-size:7px;
+
+    letter-spacing:2px;
+
+    margin-bottom:4px;
+
+}
+
+.power-bar{
+
+    height:8px;
+
+    background:#170a20;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.power-fill{
+
+    height:100%;
+
+    width:0%;
+
+    border-radius:20px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff008c,
+            #8c35ff,
+            #00f5ff
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(255,46,166,.7);
+
+    transition:
+        width .2s;
+
+}
+
+.blast{
+
+    padding:
+        11px 14px;
+
+    border-radius:12px;
+
+    border:
+        1px solid
+        rgba(0,245,255,.3);
+
+    color:#00f5ff;
+
+    background:
+        rgba(0,245,255,.03);
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:8px;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    opacity:.35;
+
+    transition:.2s;
+
+}
+
+.blast.ready{
+
+    opacity:1;
+
+    box-shadow:
+        0 0 30px
+        rgba(0,245,255,.5);
+
+    animation:
+        blastPulse .7s
+        infinite alternate;
+
+}
+
+@keyframes blastPulse{
+
+    to{
+
+        transform:scale(1.04);
+
+        box-shadow:
+            0 0 45px
+            rgba(0,245,255,.8);
+
+    }
+
+}
+
+
+/* =========================================================
+   EFFECT
+========================================================= */
+
+.effect{
+
+    position:fixed;
+
+    left:50%;
+
+    top:14%;
+
+    transform:
+        translateX(-50%);
+
+    z-index:700;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    padding:
+        9px 16px;
+
+    border-radius:50px;
+
+    background:
+        rgba(0,0,0,.45);
+
+    backdrop-filter:blur(15px);
+
+    pointer-events:none;
+
+    animation:
+        effectIn 1.2s forwards;
+
+    white-space:nowrap;
+
+}
+
+@keyframes effectIn{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-15px)
+            scale(.8);
+
+    }
+
+    20%,70%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,0)
+            scale(1);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-10px)
+            scale(1.05);
+
+    }
+
+}
+
+
+/* =========================================================
+   POPUP
+========================================================= */
+
+.popup{
+
+    position:fixed;
+
+    z-index:600;
+
+    pointer-events:none;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-weight:900;
+
+    text-shadow:
+
+        0 0 12px #ff2ea6,
+
+        0 0 30px #ff2ea6;
+
+    animation:
+        popup .75s forwards;
+
+}
+
+@keyframes popup{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,0)
+            scale(.4);
+
+    }
+
+    25%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-15px)
+            scale(1.25);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-75px)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   PERFECT
+========================================================= */
+
+.perfect{
+
+    position:fixed;
+
+    z-index:650;
+
+    pointer-events:none;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    color:#ffd43b;
+
+    font-size:24px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    text-shadow:
+
+        0 0 10px #ffd43b,
+
+        0 0 30px #ff9f00,
+
+        0 0 70px #ff9f00;
+
+    animation:
+        perfect .85s forwards;
+
+}
+
+@keyframes perfect{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.2);
+
+    }
+
+    20%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.3);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-110%)
+            scale(1.1);
+
+    }
+
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.particle{
+
+    position:fixed;
+
+    width:5px;
+
+    height:5px;
+
+    border-radius:50%;
+
+    z-index:550;
+
+    pointer-events:none;
+
+    background:white;
+
+    box-shadow:
+        0 0 10px #ff2ea6;
+
+    animation:
+        particle 1s
+        forwards
+        cubic-bezier(.1,.8,.2,1);
+
+}
+
+@keyframes particle{
+
+    to{
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(.05);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================================
+   RING
+========================================================= */
+
+.ring{
+
+    position:fixed;
+
+    width:15px;
+
+    height:15px;
+
+    border:
+        2px solid #ff2ea6;
+
+    border-radius:50%;
+
+    z-index:500;
+
+    pointer-events:none;
+
+    animation:
+        ring .65s forwards;
+
+}
+
+@keyframes ring{
+
+    to{
+
+        width:180px;
+
+        height:180px;
+
+        margin:
+            -82px 0 0 -82px;
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================================
+   FLASH
+========================================================= */
+
+.flash{
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:800;
+
+}
+
+.flash.active{
+
+    animation:
+        flash .28s;
+
+}
+
+@keyframes flash{
+
+    0%{
+        opacity:.25;
+    }
+
+    100%{
+        opacity:0;
+    }
+
+}
+
+
+/* =========================================================
+   FEVER
+========================================================= */
+
+.fever-overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:450;
+
+    border:
+        4px solid
+        rgba(255,46,166,.5);
+
+    box-shadow:
+
+        inset 0 0 100px
+        rgba(255,0,140,.15);
+
+}
+
+.fever-overlay.show{
+
+    display:block;
+
+    animation:
+        feverBorder
+        .35s
+        infinite alternate;
+
+}
+
+@keyframes feverBorder{
+
+    to{
+
+        border-color:
+            rgba(0,245,255,.7);
+
+        box-shadow:
+
+            inset 0 0 150px
+            rgba(0,245,255,.12);
+
+    }
+
+}
+
+
+/* =========================================================
+   SHAKE
+========================================================= */
+
+.shake{
+
+    animation:
+        shake .32s;
+
+}
+
+@keyframes shake{
+
+    0%{
+        transform:translate(0,0)
+    }
+
+    20%{
+        transform:translate(-7px,4px)
+    }
+
+    40%{
+        transform:translate(6px,-4px)
+    }
+
+    60%{
+        transform:translate(-5px,-5px)
+    }
+
+    80%{
+        transform:translate(5px,4px)
+    }
+
+    100%{
+        transform:translate(0,0)
+    }
+
+}
+
+
+/* =========================================================
+   ACHIEVEMENT
+========================================================= */
+
+.achievement{
+
+    position:fixed;
+
+    right:20px;
+
+    top:75px;
+
+    width:min(
+        310px,
+        calc(100% - 40px)
+    );
+
+    z-index:850;
+
+    padding:14px;
+
+    border-radius:16px;
+
+    border:
+        1px solid
+        rgba(255,212,59,.35);
+
+    background:
+        rgba(12,5,20,.88);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 0 35px
+        rgba(255,212,59,.15);
+
+    transform:
+        translateX(130%);
+
+    transition:
+        .5s
+        cubic-bezier(.16,1,.3,1);
+
+}
+
+.achievement.show{
+
+    transform:
+        translateX(0);
+
+}
+
+.achievement small{
+
+    color:#777;
+
+    font-size:7px;
+
+    letter-spacing:2px;
+
+}
+
+.achievement strong{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:#ffd43b;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:12px;
+
+}
+
+
+/* =========================================================
+   PAUSE
+========================================================= */
+
+.pause{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:950;
+
+    background:
+        rgba(3,0,8,.75);
+
+    backdrop-filter:blur(15px);
+
+}
+
+.pause.show{
+
+    display:flex;
+
+}
+
+.pause-box{
+
+    width:min(
+        380px,
+        90%
+    );
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    background:
+        rgba(15,5,25,.85);
+
+}
+
+.pause-box h2{
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+
+}
+
+.secondary-btn{
+
+    padding:15px;
+
+    border-radius:14px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    background:
+        rgba(255,255,255,.04);
+
+    color:#aaa;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:8px;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.secondary-btn:hover{
+
+    color:#fff;
+
+    border-color:#00f5ff;
+
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.result{
+
+    width:min(
+        670px,
+        100%
+    );
+
+    max-height:94vh;
+
+    overflow:auto;
+
+    text-align:center;
+
+    padding:
+        32px 24px;
+
+    border-radius:30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    backdrop-filter:blur(30px);
+
+    box-shadow:
+        0 40px 130px
+        rgba(0,0,0,.7);
+
+    animation:
+        resultIn .8s
+        cubic-bezier(.16,1,.3,1);
+
+}
+
+@keyframes resultIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(40px)
+            scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+.result-mini{
+
+    color:#777;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+}
+
+.result-title{
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:
+        clamp(29px,8vw,52px);
+
+    margin:
+        15px 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #fff,
+            #ff2ea6,
+            #8d35ff,
+            #00f5ff
+        );
+
+    background-size:250%;
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:
+        gradient 4s infinite;
+
+}
+
+.final-score{
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:
+        clamp(55px,15vw,82px);
+
+    font-weight:900;
+
+    text-shadow:
+
+        0 0 15px #ff2ea6,
+
+        0 0 45px
+        rgba(255,46,166,.6),
+
+        0 0 90px
+        rgba(139,53,255,.4);
+
+}
+
+.new-record{
+
+    display:none;
+
+    color:#ffd43b;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    margin:8px;
+
+    animation:
+        recordPulse
+        .5s
+        infinite alternate;
+
+}
+
+@keyframes recordPulse{
+
+    to{
+
+        transform:scale(1.08);
+
+        text-shadow:
+            0 0 20px #ffd43b;
+
+    }
+
+}
+
+.rank{
+
+    display:inline-block;
+
+    margin:
+        12px 0;
+
+    padding:
+        9px 18px;
+
+    border-radius:50px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    color:#ccc;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    background:
+        rgba(255,255,255,.035);
+
+}
+
+.result-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:7px;
+
+    margin:
+        10px 0 15px;
+
+}
+
+.result-stat{
+
+    padding:
+        12px 4px;
+
+    border-radius:13px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:#777;
+
+    font-size:8px;
+
+}
+
+.result-stat b{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:white;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:13px;
+
+}
+
+.share{
+
+    color:#777;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+    margin-bottom:12px;
+
+}
+
+.share b{
+
+    color:#ff2ea6;
+
+}
+
+.result-buttons{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:7px;
+
+}
+
+
+/* =========================================================
+   CHALLENGE MODAL
+========================================================= */
+
+.challenge-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:980;
+
+    background:
+        rgba(2,0,8,.82);
+
+    backdrop-filter:
+        blur(18px);
+
+}
+
+.challenge-modal.show{
+
+    display:flex;
+
+}
+
+.challenge-card{
+
+    width:min(
+        500px,
+        calc(100% - 30px)
+    );
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    padding:
+        30px 22px;
+
+    border-radius:27px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        rgba(255,46,166,.25);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+
+        0 40px 120px
+        rgba(0,0,0,.8),
+
+        0 0 80px
+        rgba(255,0,140,.12);
+
+    animation:
+        challengeIn
+        .5s
+        cubic-bezier(.16,1,.3,1);
+
+}
+
+@keyframes challengeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            scale(.75)
+            translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
+}
+
+.challenge-logo{
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    color:#777;
+
+}
+
+.challenge-title{
+
+    margin:
+        12px 0 5px;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:
+        clamp(24px,7vw,38px);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #fff,
+            #ff2ea6,
+            #00f5ff
+        );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.challenge-sub{
+
+    color:#777;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+
+}
+
+.challenge-player{
+
+    color:#fff;
+
+    font-size:13px;
+
+    margin-bottom:6px;
+
+}
+
+.challenge-player strong{
+
+    color:#ff2ea6;
+
+}
+
+.challenge-score{
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:
+        clamp(48px,13vw,70px);
+
+    font-weight:900;
+
+    color:#00f5ff;
+
+    text-shadow:
+
+        0 0 15px #00f5ff,
+
+        0 0 45px
+        rgba(0,245,255,.45);
+
+}
+
+.challenge-label{
+
+    color:#777;
+
+    font-size:8px;
+
+    letter-spacing:3px;
+
+    margin-bottom:17px;
+
+}
+
+.challenge-stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:7px;
+
+    margin-bottom:18px;
+
+}
+
+.challenge-stat{
+
+    padding:12px 4px;
+
+    border-radius:13px;
+
+    background:
+        rgba(255,255,255,.035);
+
+}
+
+.challenge-stat span{
+
+    display:block;
+
+    color:#666;
+
+    font-size:7px;
+
+    letter-spacing:1px;
+
+}
+
+.challenge-stat b{
+
+    display:block;
+
+    color:#fff;
+
+    margin-top:4px;
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:11px;
+
+}
+
+.challenge-message{
+
+    padding:
+        15px;
+
+    margin-bottom:15px;
+
+    border-radius:15px;
+
+    background:
+        rgba(255,46,166,.045);
+
+    border:
+        1px solid
+        rgba(255,46,166,.1);
+
+    color:#aaa;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+}
+
+.challenge-message strong{
+
+    color:#fff;
+
+}
+
+.challenge-buttons{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:7px;
+
+}
+
+
+/* =========================================================
+   DAILY
+========================================================= */
+
+.daily-badge{
+
+    position:absolute;
+
+    left:50%;
+
+    top:12px;
+
+    transform:
+        translateX(-50%);
+
+    z-index:25;
+
+    padding:
+        6px 12px;
+
+    border-radius:30px;
+
+    border:
+        1px solid
+        rgba(255,212,59,.3);
+
+    color:#ffd43b;
+
+    background:
+        rgba(255,212,59,.05);
+
+    font-family:
+        'Orbitron',
+        sans-serif;
+
+    font-size:7px;
+
+    letter-spacing:2px;
+
+    display:none;
+
+}
+
+.daily-badge.show{
+
+    display:block;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .cursor{
+        display:none;
+    }
+
+    .brand{
+
+        top:14px;
+
+        left:15px;
+
+        font-size:9px;
+
+        letter-spacing:3px;
+
+    }
+
+    .screen{
+        padding:12px;
+    }
+
+    .login{
+
+        padding:
+            27px 19px;
+
+        border-radius:25px;
+
+    }
+
+    .game{
+
+        padding:
+            58px 7px 7px;
+
+    }
+
+    .top-actions{
+
+        top:11px;
+
+        right:11px;
+
+    }
+
+    .hud{
+
+        grid-template-columns:
+            repeat(6,1fr);
+
+        gap:4px;
+
+    }
+
+    .stat{
+
+        padding:
+            7px 1px;
+
+    }
+
+    .stat-label{
+
+        font-size:5px;
+
+        letter-spacing:.7px;
+
+    }
+
+    .stat-value{
+
+        font-size:10px;
+
+    }
+
+    .arena{
+
+        height:
+            calc(100vh - 180px);
+
+        min-height:350px;
+
+        border-radius:18px;
+
+    }
+
+    .target{
+
+        width:51px;
+        height:51px;
+
+    }
+
+    .target.gold{
+
+        width:61px;
+        height:61px;
+
+    }
+
+    .target.diamond{
+
+        width:55px;
+        height:55px;
+
+    }
+
+    .target.boss{
+
+        width:105px;
+        height:105px;
+
+    }
+
+    .bottom{
+
+        margin-top:6px;
+
+    }
+
+    .blast{
+
+        padding:
+            9px;
+
+        font-size:6px;
+
+    }
+
+    .result-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .result-buttons{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .challenge-buttons{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+@media(max-height:600px){
+
+    .game{
+
+        padding-top:49px;
+
+    }
+
+    .arena{
+
+        height:
+            calc(100vh - 120px);
+
+        min-height:250px;
+
+    }
+
+    .stat{
+
+        padding:4px;
+
+    }
+
+}
+
+</style>
+
+
+<style id="mobile-optimization">
+/* NEON VEIL — MOBILE OPTIMIZATION (visual design preserved) */
+html, body { width:100%; min-height:100%; overflow-x:hidden; }
+body { -webkit-tap-highlight-color:transparent; touch-action:manipulation; overscroll-behavior:none; }
+button, a, input { touch-action:manipulation; }
+#gameArea, #gameContainer, .game-area, .game-container, #arena, .arena { max-width:100vw; }
+@media (max-width: 600px) {
+  body { min-height:100svh; }
+  .container, .screen, .page, .game-screen, #gameScreen { max-width:100vw; box-sizing:border-box; }
+  h1 { max-width:94vw; }
+  button { min-height:44px; }
+  input { min-height:44px; font-size:16px !important; }
+  #gameArea, #arena, .arena { width:min(94vw, 560px); height:min(68svh, 620px); max-height:68svh; margin-left:auto; margin-right:auto; }
+  .hud, .game-hud, #hud { width:94vw; max-width:560px; box-sizing:border-box; gap:6px; }
+  .hud * { box-sizing:border-box; }
+  .modal, .overlay, .result-screen, .challenge-modal { width:min(92vw, 520px); max-width:92vw; max-height:88svh; overflow-y:auto; box-sizing:border-box; }
+  .powerups, .power-up-container { max-width:94vw; overflow-x:auto; scrollbar-width:none; }
+  .powerups::-webkit-scrollbar, .power-up-container::-webkit-scrollbar { display:none; }
+}
+@media (max-width: 390px) {
+  #gameArea, #arena, .arena { width:96vw; height:64svh; max-height:64svh; }
+  .hud, .game-hud, #hud { width:96vw; }
+  .modal, .overlay, .result-screen, .challenge-modal { width:94vw; max-width:94vw; }
+}
+@media (max-height: 700px) and (max-width: 600px) {
+  #gameArea, #arena, .arena { height:60svh; max-height:60svh; }
+}
+@media (orientation: landscape) and (max-width: 900px) {
+  #gameArea, #arena, .arena { width:min(92vw, 900px); height:72svh; max-height:72svh; }
+}
+@supports (padding: max(0px)) {
+  body { padding-bottom:max(0px, env(safe-area-inset-bottom)); }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="aurora"></div>
+
+<div class="grid"></div>
+
+<div class="noise"></div>
+
+<div
+    class="cursor"
+    id="cursor"
+></div>
+
+<div
+    class="flash"
+    id="flash"
+></div>
+
+<div
+    class="fever-overlay"
+    id="feverOverlay"
+></div>
+
+<div class="brand">
+
+    VELVET
+    <span>DIARY</span>
+
+</div>
+
+
+<!-- =========================================================
+     LOGIN
+========================================================= -->
+
+<section
+    class="screen active"
+    id="loginScreen"
+>
+
+    <div class="login">
+
+        <div class="device-note">
+
+            💻 LAPTOP RECOMMENDED
+            •
+            📱 PHONE SUPPORTED
+
+        </div>
+
+        <div class="mini">
+
+            A VELVET DIARY EXPERIENCE
+
+        </div>
+
+        <h1 class="title">
+
+            NEON<br>VEIL
+
+        </h1>
+
+        <p class="tagline">
+
+            HOW LONG CAN YOU CHASE THE GLOW?
+
+        </p>
+
+        <div class="mode-title">
+
+            SELECT YOUR MODE
+
+        </div>
+
+        <div class="mode-buttons">
+
+            <button
+                class="mode-btn active"
+                onclick="
+                    selectMode('classic',this)
+                "
+            >
+                CLASSIC
+            </button>
+
+            <button
+                class="mode-btn"
+                onclick="
+                    selectMode('attack',this)
+                "
+            >
+                TIME ATTACK
+            </button>
+
+            <button
+                class="mode-btn"
+                onclick="
+                    selectMode('one',this)
+                "
+            >
+                ONE LIFE
+            </button>
+
+        </div>
+
+        <div class="input">
+
+            <label>
+
+                Enter your name
+
+            </label>
+
+            <input
+                id="playerName"
+                type="text"
+                maxlength="18"
+                placeholder="Your name..."
+                autocomplete="off"
+            >
+
+        </div>
+
+        <button
+            class="main-btn"
+            onclick="startGame()"
+        >
+
+            ENTER THE VEIL ✦
+
+        </button>
+
+        <div
+            class="warning"
+            id="warning"
+        >
+
+            Please enter your name.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GAME
+========================================================= -->
+
+<section
+    class="screen game"
+    id="gameScreen"
+>
+
+    <div class="top-actions">
+
+        <button
+            class="icon-btn"
+            onclick="toggleSound()"
+            id="soundBtn"
+        >
+            🔊
+        </button>
+
+        <button
+            class="icon-btn"
+            onclick="pauseGame()"
+        >
+            II
+        </button>
+
+    </div>
+
+
+    <div class="hud">
+
+        <div class="stat">
+
+            <div class="stat-label">
+                SCORE
+            </div>
+
+            <div
+                class="stat-value"
+                id="score"
+            >
+                0000
+            </div>
+
+        </div>
+
+        <div class="stat">
+
+            <div class="stat-label">
+                COMBO
+            </div>
+
+            <div
+                class="stat-value"
+                id="combo"
+            >
+                x0
+            </div>
+
+        </div>
+
+        <div class="stat">
+
+            <div class="stat-label">
+                TIME
+            </div>
+
+            <div
+                class="stat-value"
+                id="time"
+            >
+                60
+            </div>
+
+        </div>
+
+        <div class="stat">
+
+            <div class="stat-label">
+                LEVEL
+            </div>
+
+            <div
+                class="stat-value"
+                id="level"
+            >
+                01
+            </div>
+
+        </div>
+
+        <div class="stat">
+
+            <div class="stat-label">
+                LIVES
+            </div>
+
+            <div
+                class="stat-value"
+                id="lives"
+            >
+                ♥♥♥
+            </div>
+
+        </div>
+
+        <div class="stat">
+
+            <div class="stat-label">
+                AIM
+            </div>
+
+            <div
+                class="stat-value"
+                id="accuracy"
+            >
+                100%
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="arena"
+        id="arena"
+    >
+
+        <div
+            class="arena-message"
+            id="arenaMessage"
+        >
+
+            TAP THE GLOW
+
+        </div>
+
+        <div
+            class="daily-badge"
+            id="dailyBadge"
+        >
+
+            ★ DAILY VEIL ★
+
+        </div>
+
+        <div
+            class="boss-bar"
+            id="bossBar"
+        >
+
+            <div class="boss-name">
+
+                ⚠ FINAL VEIL BOSS
+
+            </div>
+
+            <div class="boss-track">
+
+                <div
+                    class="boss-fill"
+                    id="bossFill"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="bottom">
+
+        <div class="power-wrap">
+
+            <div class="power-label">
+
+                VEIL POWER
+
+            </div>
+
+            <div class="power-bar">
+
+                <div
+                    class="power-fill"
+                    id="powerFill"
+                ></div>
+
+            </div>
+
+        </div>
+
+        <button
+            class="blast"
+            id="blast"
+            onclick="useBlast()"
+        >
+
+            VEIL BLAST
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     RESULT
+========================================================= -->
+
+<section
+    class="screen"
+    id="resultScreen"
+>
+
+    <div class="result">
+
+        <div class="result-mini">
+
+            VELVET DIARY PRESENTS
+
+        </div>
+
+        <h2 class="result-title">
+
+            VEIL COMPLETE
+
+        </h2>
+
+        <div
+            class="final-score"
+            id="finalScore"
+        >
+            0000
+        </div>
+
+        <div
+            class="new-record"
+            id="newRecord"
+        >
+
+            ✦ NEW PERSONAL BEST ✦
+
+        </div>
+
+        <div
+            class="rank"
+            id="rank"
+        >
+
+            NOVICE OF THE VEIL
+
+        </div>
+
+        <div class="result-grid">
+
+            <div class="result-stat">
+
+                SCORE
+
+                <b id="resultScore">
+                    0
+                </b>
+
+            </div>
+
+            <div class="result-stat">
+
+                TARGETS
+
+                <b id="finalHits">
+                    0
+                </b>
+
+            </div>
+
+            <div class="result-stat">
+
+                BEST COMBO
+
+                <b id="finalCombo">
+                    x0
+                </b>
+
+            </div>
+
+            <div class="result-stat">
+
+                ACCURACY
+
+                <b id="finalAccuracy">
+                    100%
+                </b>
+
+            </div>
+
+        </div>
+
+        <p class="share">
+
+            <span id="resultMessage">
+
+                Think you can beat this?
+
+            </span>
+
+            <br>
+
+            Challenge your friends
+            and take the crown 👑
+
+        </p>
+
+        <div class="result-buttons">
+
+            <button
+                class="secondary-btn"
+                onclick="openChallenge()"
+            >
+
+                🔥 CHALLENGE A FRIEND
+
+            </button>
+
+            <button
+                class="main-btn"
+                onclick="restartGame()"
+            >
+
+                PLAY AGAIN ✦
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ACHIEVEMENT
+========================================================= -->
+
+<div
+    class="achievement"
+    id="achievement"
+>
+
+    <small>
+
+        ACHIEVEMENT UNLOCKED
+
+    </small>
+
+    <strong
+        id="achievementText"
+    >
+
+        FIRST BLOOD
+
+    </strong>
+
+</div>
+
+
+<!-- =========================================================
+     PAUSE
+========================================================= -->
+
+<div
+    class="pause"
+    id="pause"
+>
+
+    <div class="pause-box">
+
+        <h2>
+
+            PAUSED
+
+        </h2>
+
+        <button
+            class="main-btn"
+            onclick="resumeGame()"
+        >
+
+            RESUME ✦
+
+        </button>
+
+        <br>
+        <br>
+
+        <button
+            class="secondary-btn"
+            onclick="quitGame()"
+            style="width:100%"
+        >
+
+            QUIT RUN
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     CHALLENGE MODAL
+========================================================= -->
+
+<div
+    class="challenge-modal"
+    id="challengeModal"
+>
+
+    <div class="challenge-card">
+
+        <div class="challenge-logo">
+
+            VELVET DIARY
+
+        </div>
+
+        <div class="challenge-title">
+
+            NEON VEIL
+
+        </div>
+
+        <div class="challenge-sub">
+
+            ⚡ FRIEND CHALLENGE ⚡
+
+        </div>
+
+        <div class="challenge-player">
+
+            🔥
+            <strong id="challengePlayer">
+                PLAYER
+            </strong>
+            just scored
+
+        </div>
+
+        <div
+            class="challenge-score"
+            id="challengeScore"
+        >
+            0
+        </div>
+
+        <div class="challenge-label">
+
+            POINTS
+
+        </div>
+
+        <div class="challenge-stats">
+
+            <div class="challenge-stat">
+
+                <span>
+                    TARGETS
+                </span>
+
+                <b id="challengeHits">
+                    0
+                </b>
+
+            </div>
+
+            <div class="challenge-stat">
+
+                <span>
+                    BEST COMBO
+                </span>
+
+                <b id="challengeCombo">
+                    x0
+                </b>
+
+            </div>
+
+            <div class="challenge-stat">
+
+                <span>
+                    ACCURACY
+                </span>
+
+                <b id="challengeAccuracy">
+                    100%
+                </b>
+
+            </div>
+
+        </div>
+
+        <div class="challenge-message">
+
+            💀
+            <strong>
+                THINK YOU CAN BEAT THIS?
+            </strong>
+
+            <br>
+
+            Play NEON VEIL for 60 seconds,
+            beat the score,
+            and take the crown! 👑
+
+        </div>
+
+        <div class="challenge-buttons">
+
+            <button
+                class="main-btn"
+                onclick="shareChallenge()"
+            >
+
+                📲 SHARE CHALLENGE
+
+            </button>
+
+            <button
+                class="secondary-btn"
+                onclick="copyChallenge()"
+            >
+
+                📋 COPY MESSAGE
+
+            </button>
+
+            <button
+                class="secondary-btn"
+                onclick="closeChallenge()"
+                style="grid-column:1/-1"
+            >
+
+                CLOSE
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   NEON VEIL ULTRA ENGINE
+========================================================= */
+
+
+/* =========================================================
+   GAME VARIABLES
+========================================================= */
+
+let playerName = "";
+
+let selectedMode =
+    "classic";
+
+let score = 0;
+
+let combo = 0;
+
+let bestCombo = 0;
+
+let hits = 0;
+
+let misses = 0;
+
+let timeLeft = 60;
+
+let level = 1;
+
+let lives = 3;
+
+let power = 0;
+
+let gameRunning = false;
+
+let paused = false;
+
+let timer = null;
+
+let targetTimer = null;
+
+let currentTarget = null;
+
+let audio = null;
+
+let soundEnabled = true;
+
+let doubleScore = false;
+
+let frozen = false;
+
+let magnet = false;
+
+let shield = false;
+
+let bossActive = false;
+
+let bossHP = 100;
+
+let bossHits = 0;
+
+let fever = false;
+
+let rage = false;
+
+let achievements = [];
+
+let runStartedAt = 0;
+
+let targetCreatedAt = 0;
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const arena =
+    document.getElementById(
+        "arena"
+    );
+
+const scoreEl =
+    document.getElementById(
+        "score"
+    );
+
+const comboEl =
+    document.getElementById(
+        "combo"
+    );
+
+const timeEl =
+    document.getElementById(
+        "time"
+    );
+
+const levelEl =
+    document.getElementById(
+        "level"
+    );
+
+const livesEl =
+    document.getElementById(
+        "lives"
+    );
+
+const accuracyEl =
+    document.getElementById(
+        "accuracy"
+    );
+
+const powerFill =
+    document.getElementById(
+        "powerFill"
+    );
+
+const blast =
+    document.getElementById(
+        "blast"
+    );
+
+const flash =
+    document.getElementById(
+        "flash"
+    );
+
+
+/* =========================================================
+   MODE
+========================================================= */
+
+function selectMode(
+    mode,
+    button
+){
+
+    selectedMode =
+        mode;
+
+    document
+        .querySelectorAll(
+            ".mode-btn"
+        )
+        .forEach(
+            b =>
+                b.classList.remove(
+                    "active"
+                )
+        );
+
+    button.classList.add(
+        "active"
+    );
+
+    buttonSound();
+
+}
+
+
+/* =========================================================
+   AUDIO ENGINE
+========================================================= */
+
+function initAudio(){
+
+    if(audio)
+        return;
+
+    try{
+
+        audio =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+    }
+    catch(e){
+
+        audio = null;
+
+    }
+
+}
+
+
+/* =========================================================
+   UNIVERSAL SOUND
+========================================================= */
+
+function sound(
+    frequency,
+    duration=.07,
+    type="sine",
+    volume=.035,
+    slide=0
+){
+
+    if(
+        !audio ||
+        !soundEnabled
+    )
+        return;
+
+    try{
+
+        const osc =
+            audio.createOscillator();
+
+        const gain =
+            audio.createGain();
+
+        osc.type =
+            type;
+
+        osc.frequency.setValueAtTime(
+            frequency,
+            audio.currentTime
+        );
+
+        if(slide){
+
+            osc.frequency.linearRampToValueAtTime(
+                frequency + slide,
+                audio.currentTime + duration
+            );
+
+        }
+
+        gain.gain.setValueAtTime(
+            volume,
+            audio.currentTime
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            .001,
+            audio.currentTime + duration
+        );
+
+        osc.connect(gain);
+
+        gain.connect(
+            audio.destination
+        );
+
+        osc.start();
+
+        osc.stop(
+            audio.currentTime +
+            duration
+        );
+
+    }
+    catch(e){}
+
+}
+
+
+/* =========================================================
+   SOUND PACK
+========================================================= */
+
+function buttonSound(){
+
+    sound(
+        520,
+        .05,
+        "sine",
+        .025,
+        80
+    );
+
+}
+
+function normalHitSound(){
+
+    sound(
+        420 + combo * 13,
+        .055,
+        "sine",
+        .032,
+        80
+    );
+
+}
+
+function goldSound(){
+
+    sound(
+        760,
+        .08,
+        "triangle",
+        .05,
+        220
+    );
+
+    setTimeout(()=>{
+
+        sound(
+            1180,
+            .12,
+            "triangle",
+            .045,
+            180
+        );
+
+    },70);
+
+}
+
+function diamondSound(){
+
+    sound(
+        800,
+        .08,
+        "sine",
+        .045,
+        350
+    );
+
+    setTimeout(()=>{
+
+        sound(
+            1300,
+            .13,
+            "sine",
+            .04,
+            -180
+        );
+
+    },80);
+
+}
+
+function powerupSound(){
+
+    sound(
+        500,
+        .07,
+        "triangle",
+        .045,
+        180
+    );
+
+    setTimeout(()=>{
+
+        sound(
+            800,
+            .09,
+            "triangle",
+            .045,
+            220
+        );
+
+    },70);
+
+}
+
+function missSound(){
+
+    sound(
+        150,
+        .14,
+        "sawtooth",
+        .04,
+        -70
+    );
+
+}
+
+function comboSound(){
+
+    sound(
+        600,
+        .07,
+        "square",
+        .035,
+        180
+    );
+
+    setTimeout(()=>{
+
+        sound(
+            900,
+            .09,
+            "square",
+            .04,
+            250
+        );
+
+    },70);
+
+}
+
+function levelSound(){
+
+    sound(
+        450,
+        .1,
+        "triangle",
+        .04,
+        150
+    );
+
+    setTimeout(()=>{
+
+        sound(
+            700,
+            .1,
+            "triangle",
+            .045,
+            200
+        );
+
+    },90);
+
+    setTimeout(()=>{
+
+        sound(
+            1000,
+            .15,
+            "sine",
+            .05,
+            100
+        );
+
+    },180);
+
+}
+
+function blastSound(){
+
+    sound(
+        160,
+        .16,
+        "sawtooth",
+        .045,
+        350
+    );
+
+    setTimeout(()=>{
+
+        sound(
+            420,
+            .14,
+            "square",
+            .05,
+            500
+        );
+
+    },100);
+
+    setTimeout(()=>{
+
+        sound(
+            900,
+            .22,
+            "sine",
+            .055,
+            300
+        );
+
+    },200);
+
+}
+
+function bossSound(){
+
+    sound(
+        90,
+        .25,
+        "sawtooth",
+        .05,
+        100
+    );
+
+    setTimeout(()=>{
+
+        sound(
+            180,
+            .25,
+            "sawtooth",
+            .05,
+            150
+        );
+
+    },200);
+
+}
+
+function bossHitSound(){
+
+    sound(
+        300 + bossHits * 30,
+        .08,
+        "square",
+        .055,
+        180
+    );
+
+}
+
+function bossWinSound(){
+
+    sound(
+        300,
+        .12,
+        "triangle",
+        .05,
+        300
+    );
+
+    setTimeout(()=>{
+
+        sound(
+            600,
+            .15,
+            "triangle",
+            .055,
+            350
+        );
+
+    },120);
+
+    setTimeout(()=>{
+
+        sound(
+            1000,
+            .25,
+            "sine",
+            .06,
+            300
+        );
+
+    },260);
+
+}
+
+function achievementSound(){
+
+    sound(
+        700,
+        .08,
+        "triangle",
+        .045,
+        180
+    );
+
+    setTimeout(()=>{
+
+        sound(
+            1050,
+            .14,
+            "triangle",
+            .05,
+            180
+        );
+
+    },100);
+
+}
+
+function resultSound(){
+
+    sound(
+        300,
+        .14,
+        "triangle",
+        .04,
+        180
+    );
+
+    setTimeout(()=>{
+
+        sound(
+            600,
+            .18,
+            "triangle",
+            .05,
+            250
+        );
+
+    },140);
+
+}
+
+
+/* =========================================================
+   SOUND TOGGLE
+========================================================= */
+
+function toggleSound(){
+
+    soundEnabled =
+        !soundEnabled;
+
+    document.getElementById(
+        "soundBtn"
+    ).textContent =
+        soundEnabled
+        ? "🔊"
+        : "🔇";
+
+    if(soundEnabled){
+
+        initAudio();
+
+        sound(
+            700,
+            .08,
+            "sine",
+            .04,
+            100
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   VIBRATION
+========================================================= */
+
+function vibrate(pattern){
+
+    if(
+        navigator.vibrate
+    ){
+
+        navigator.vibrate(
+            pattern
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   START
+========================================================= */
+
+function startGame(){
+
+    const nameInput =
+        document.getElementById(
+            "playerName"
+        );
+
+    playerName =
+        nameInput.value.trim();
+
+    if(
+        playerName.length < 2
+    ){
+
+        document.getElementById(
+            "warning"
+        ).style.display =
+            "block";
+
+        return;
+
+    }
+
+    document.getElementById(
+        "warning"
+    ).style.display =
+        "none";
+
+    initAudio();
+
+    if(
+        audio &&
+        audio.state ===
+        "suspended"
+    ){
+
+        audio.resume();
+
+    }
+
+    buttonSound();
+
+    resetGame();
+
+    document
+        .getElementById(
+            "loginScreen"
+        )
+        .classList.remove(
+            "active"
+        );
+
+    document
+        .getElementById(
+            "gameScreen"
+        )
+        .classList.add(
+            "active"
+        );
+
+    runStartedAt =
+        Date.now();
+
+    setTimeout(()=>{
+
+        document
+            .getElementById(
+                "arenaMessage"
+            )
+            .style.display =
+            "none";
+
+        gameRunning =
+            true;
+
+        startCountdown();
+
+    },350);
+
+}
+
+
+/* =========================================================
+   START COUNTDOWN
+========================================================= */
+
+function startCountdown(){
+
+    let count = 3;
+
+    effect(
+        "GET READY"
+    );
+
+    sound(
+        500,
+        .08,
+        "sine",
+        .04
+    );
+
+    const countdown =
+        setInterval(()=>{
+
+            if(
+                !gameRunning
+            ){
+
+                clearInterval(
+                    countdown
+                );
+
+                return;
+
+            }
+
+            if(count > 0){
+
+                effect(
+                    String(count)
+                );
+
+                sound(
+                    350 +
+                    count * 100,
+                    .08,
+                    "square",
+                    .04
+                );
+
+                count--;
+
+            }
+            else{
+
+                clearInterval(
+                    countdown
+                );
+
+                effect(
+                    "GO! ✦"
+                );
+
+                sound(
+                    900,
+                    .12,
+                    "triangle",
+                    .05,
+                    200
+                );
+
+                createTarget();
+
+                startTimer();
+
+            }
+
+        },700);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+function resetGame(){
+
+    clearInterval(timer);
+
+    clearTimeout(targetTimer);
+
+    score = 0;
+
+    combo = 0;
+
+    bestCombo = 0;
+
+    hits = 0;
+
+    misses = 0;
+
+    level = 1;
+
+    lives =
+        selectedMode === "one"
+        ? 1
+        : 3;
+
+    timeLeft =
+        selectedMode === "attack"
+        ? 30
+        : 60;
+
+    power = 0;
+
+    gameRunning = false;
+
+    paused = false;
+
+    doubleScore = false;
+
+    frozen = false;
+
+    magnet = false;
+
+    shield = false;
+
+    bossActive = false;
+
+    bossHP = 100;
+
+    bossHits = 0;
+
+    fever = false;
+
+    rage = false;
+
+    achievements = [];
+
+    document
+        .querySelectorAll(
+            ".target,.powerup"
+        )
+        .forEach(
+            e => e.remove()
+        );
+
+    currentTarget = null;
+
+    scoreEl.textContent =
+        "0000";
+
+    comboEl.textContent =
+        "x0";
+
+    timeEl.textContent =
+        timeLeft;
+
+    levelEl.textContent =
+        "01";
+
+    livesEl.textContent =
+        "♥".repeat(lives) +
+        "♡".repeat(3-lives);
+
+    accuracyEl.textContent =
+        "100%";
+
+    powerFill.style.width =
+        "0%";
+
+    blast.classList.remove(
+        "ready"
+    );
+
+    document
+        .getElementById(
+            "feverOverlay"
+        )
+        .classList.remove(
+            "show"
+        );
+
+    document
+        .getElementById(
+            "bossBar"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+function startTimer(){
+
+    clearInterval(timer);
+
+    timer =
+        setInterval(()=>{
+
+            if(
+                !gameRunning ||
+                paused
+            )
+                return;
+
+            timeLeft--;
+
+            timeEl.textContent =
+                timeLeft;
+
+            updateLevel();
+
+            checkFinalPhase();
+
+            maybeSpawnPowerUp();
+
+            if(
+                timeLeft <= 0
+            ){
+
+                if(
+                    !bossActive
+                ){
+
+                    startBoss();
+
+                }
+                else{
+
+                    endGame();
+
+                }
+
+            }
+
+        },1000);
+
+}
+
+
+/* =========================================================
+   TARGET CREATION
+========================================================= */
+
+function createTarget(){
+
+    if(
+        !gameRunning ||
+        paused ||
+        bossActive
+    )
+        return;
+
+    clearTimeout(
+        targetTimer
+    );
+
+    if(currentTarget){
+
+        currentTarget.remove();
+
+        currentTarget = null;
+
+    }
+
+    const target =
+        document.createElement(
+            "div"
+        );
+
+    target.className =
+        "target";
+
+    const random =
+        Math.random();
+
+    if(
+        random < .10 &&
+        level >= 2
+    ){
+
+        target.classList.add(
+            "gold"
+        );
+
+    }
+    else if(
+        random < .18 &&
+        level >= 2
+    ){
+
+        target.classList.add(
+            "diamond"
+        );
+
+    }
+    else if(
+        random < .32 &&
+        level >= 2
+    ){
+
+        target.classList.add(
+            "moving"
+        );
+
+    }
+
+    const core =
+        document.createElement(
+            "div"
+        );
+
+    core.className =
+        "core";
+
+    target.appendChild(
+        core
+    );
+
+    const rect =
+        arena.getBoundingClientRect();
+
+    let padding =
+        target.classList.contains(
+            "gold"
+        )
+        ? 60
+        : 43;
+
+    const x =
+        padding +
+        Math.random() *
+        (
+            rect.width -
+            padding * 2
+        );
+
+    const y =
+        padding +
+        Math.random() *
+        (
+            rect.height -
+            padding * 2
+        );
+
+    target.style.left =
+        x + "px";
+
+    target.style.top =
+        y + "px";
+
+    target.addEventListener(
+        "pointerdown",
+        hitTarget
+    );
+
+    arena.appendChild(
+        target
+    );
+
+    currentTarget =
+        target;
+
+    targetCreatedAt =
+        Date.now();
+
+    let lifetime =
+        1450 -
+        level * 115 -
+        combo * 7;
+
+    if(
+        selectedMode === "attack"
+    ){
+
+        lifetime -= 150;
+
+    }
+
+    if(
+        fever
+    ){
+
+        lifetime -= 220;
+
+    }
+
+    if(
+        rage
+    ){
+
+        lifetime -= 260;
+
+    }
+
+    if(
+        frozen
+    ){
+
+        lifetime *= 1.8;
+
+    }
+
+    lifetime =
+        Math.max(
+            340,
+            lifetime
+        );
+
+    targetTimer =
+        setTimeout(
+            missTarget,
+            lifetime
+        );
+
+}
+
+
+/* =========================================================
+   HIT TARGET
+========================================================= */
+
+function hitTarget(event){
+
+    if(
+        !gameRunning ||
+        paused
+    )
+        return;
+
+    event.preventDefault();
+
+    const target =
+        event.currentTarget;
+
+    clearTimeout(
+        targetTimer
+    );
+
+    const gold =
+        target.classList.contains(
+            "gold"
+        );
+
+    const diamond =
+        target.classList.contains(
+            "diamond"
+        );
+
+    hits++;
+
+    combo++;
+
+    bestCombo =
+        Math.max(
+            bestCombo,
+            combo
+        );
+
+    let multiplier =
+        Math.min(
+            1 +
+            Math.floor(
+                combo / 4
+            ),
+            15
+        );
+
+    let points =
+        100 *
+        multiplier *
+        level;
+
+    if(gold)
+        points *= 5;
+
+    if(diamond)
+        points *= 3;
+
+    if(doubleScore)
+        points *= 2;
+
+
+    /* FAST HIT BONUS */
+
+    const reaction =
+        Date.now() -
+        targetCreatedAt;
+
+    if(
+        reaction < 350
+    ){
+
+        points += 250;
+
+        popup(
+            event.clientX,
+            event.clientY,
+            "⚡ LIGHTNING!"
+        );
+
+        sound(
+            1000,
+            .06,
+            "sine",
+            .035,
+            250
+        );
+
+    }
+    else if(
+        reaction < 600
+    ){
+
+        points += 100;
+
+    }
+
+
+    score +=
+        Math.round(
+            points
+        );
+
+
+    /* POWER */
+
+    power +=
+        gold
+        ? 30
+        : diamond
+        ? 24
+        : 8 +
+          Math.min(
+              combo,
+              14
+          );
+
+    power =
+        Math.min(
+            100,
+            power
+        );
+
+    if(
+        power >= 100
+    ){
+
+        blast.classList.add(
+            "ready"
+        );
+
+    }
+
+
+    updateHUD();
+
+
+    /* SOUNDS */
+
+    if(gold){
+
+        goldSound();
+
+        perfect(
+            event.clientX,
+            event.clientY
+        );
+
+        screenFlash();
+
+        shake();
+
+        vibrate(
+            [25,30,40]
+        );
+
+    }
+    else if(diamond){
+
+        diamondSound();
+
+        effect(
+            "💎 DIAMOND BONUS"
+        );
+
+        vibrate(25);
+
+    }
+    else{
+
+        normalHitSound();
+
+    }
+
+
+    /* COMBO SOUND */
+
+    if(
+        combo > 0 &&
+        combo % 5 === 0
+    ){
+
+        comboSound();
+
+    }
+
+
+    /* ACHIEVEMENTS */
+
+    if(
+        hits === 1
+    ){
+
+        unlockAchievement(
+            "🩸 FIRST BLOOD"
+        );
+
+    }
+
+    if(
+        combo >= 10
+    ){
+
+        unlockAchievement(
+            "⚡ COMBO KING"
+        );
+
+    }
+
+    if(
+        combo >= 25
+    ){
+
+        unlockAchievement(
+            "🔥 UNSTOPPABLE"
+        );
+
+    }
+
+    if(
+        combo >= 50
+    ){
+
+        unlockAchievement(
+            "👑 VELVET GOD"
+        );
+
+    }
+
+    if(gold){
+
+        unlockAchievement(
+            "💰 GOLD RUSH"
+        );
+
+    }
+
+    if(
+        diamond &&
+        hits >= 5
+    ){
+
+        unlockAchievement(
+            "💎 DIAMOND HANDS"
+        );
+
+    }
+
+
+    /* FEVER */
+
+    if(
+        combo >= 10 &&
+        !fever
+    ){
+
+        activateFever();
+
+    }
+
+
+    createParticles(
+        event.clientX,
+        event.clientY,
+        gold,
+        diamond
+    );
+
+    createRing(
+        event.clientX,
+        event.clientY,
+        gold
+    );
+
+
+    popup(
+        event.clientX,
+        event.clientY,
+
+        gold
+        ? "GOLDEN!"
+
+        : diamond
+        ? "DIAMOND!"
+
+        : combo >= 10
+        ? "COMBO x" +
+          multiplier
+
+        : "+" +
+          Math.round(points)
+
+    );
+
+
+    if(
+        combo > 0 &&
+        combo % 10 === 0
+    ){
+
+        effect(
+            "🔥 FEVER x" +
+            multiplier
+        );
+
+        screenFlash();
+
+        shake();
+
+        createBigExplosion();
+
+    }
+
+
+    target.classList.add(
+        "hit"
+    );
+
+    currentTarget = null;
+
+
+    setTimeout(()=>{
+
+        if(
+            gameRunning
+        ){
+
+            createTarget();
+
+        }
+
+    },70);
+
+}
+
+
+/* =========================================================
+   MISS
+========================================================= */
+
+function missTarget(){
+
+    if(
+        !gameRunning ||
+        paused
+    )
+        return;
+
+    misses++;
+
+    if(shield){
+
+        shield = false;
+
+        effect(
+            "🛡️ SHIELD SAVED YOU!"
+        );
+
+        power = Math.min(
+            100,
+            power + 10
+        );
+
+        powerFill.style.width =
+            power + "%";
+
+        powerupSound();
+
+        createTarget();
+
+        return;
+
+    }
+
+    combo = 0;
+
+    lives--;
+
+    livesEl.textContent =
+        "♥".repeat(
+            Math.max(
+                lives,
+                0
+            )
+        ) +
+        "♡".repeat(
+            Math.max(
+                3-lives,
+                0
+            )
+        );
+
+    comboEl.textContent =
+        "x0";
+
+    missSound();
+
+    vibrate(45);
+
+    shake();
+
+    effect(
+        lives > 0
+        ? "MISS • COMBO LOST"
+        : "LAST LIFE"
+    );
+
+    if(
+        misses >= 3 &&
+        !rage
+    ){
+
+        activateRage();
+
+    }
+
+    if(currentTarget){
+
+        currentTarget.remove();
+
+        currentTarget = null;
+
+    }
+
+    if(
+        lives <= 0
+    ){
+
+        endGame();
+
+        return;
+
+    }
+
+    createTarget();
+
+}
+
+
+/* =========================================================
+   HUD
+========================================================= */
+
+function updateHUD(){
+
+    scoreEl.textContent =
+        String(
+            Math.round(score)
+        ).padStart(
+            4,
+            "0"
+        );
+
+    comboEl.textContent =
+        "x" +
+        combo;
+
+    powerFill.style.width =
+        power +
+        "%";
+
+    const total =
+        hits +
+        misses;
+
+    const accuracy =
+        total === 0
+        ? 100
+        : Math.round(
+            hits /
+            total *
+            100
+        );
+
+    accuracyEl.textContent =
+        accuracy +
+        "%";
+
+    if(
+        combo >= 10
+    ){
+
+        comboEl.style.transform =
+            "scale(1.2)";
+
+    }
+    else{
+
+        comboEl.style.transform =
+            "scale(1)";
+
+    }
+
+}
+
+
+/* =========================================================
+   LEVEL
+========================================================= */
+
+function updateLevel(){
+
+    let newLevel;
+
+    if(
+        selectedMode === "attack"
+    ){
+
+        newLevel =
+            Math.min(
+                6,
+                Math.floor(
+                    (30-timeLeft)/5
+                ) + 1
+            );
+
+    }
+    else{
+
+        newLevel =
+            Math.min(
+                6,
+                Math.floor(
+                    (60-timeLeft)/10
+                ) + 1
+            );
+
+    }
+
+    if(
+        newLevel !== level
+    ){
+
+        level =
+            newLevel;
+
+        levelEl.textContent =
+            String(level)
+            .padStart(
+                2,
+                "0"
+            );
+
+        effect(
+            "LEVEL " +
+            String(level)
+            .padStart(
+                2,
+                "0"
+            )
+        );
+
+        screenFlash();
+
+        shake();
+
+        levelSound();
+
+    }
+
+}
+
+
+/* =========================================================
+   FINAL PHASE
+========================================================= */
+
+function checkFinalPhase(){
+
+    if(
+        timeLeft <= 10 &&
+        timeLeft > 0
+    ){
+
+        if(
+            timeLeft <= 5
+        ){
+
+            timeEl.style.color =
+                "#ff2ea6";
+
+            timeEl.style.transform =
+                "scale(1.3)";
+
+            sound(
+                200 +
+                timeLeft * 30,
+                .04,
+                "square",
+                .018
+            );
+
+        }
+
+        if(
+            timeLeft === 10
+        ){
+
+            effect(
+                "⚠ FINAL VEIL"
+            );
+
+            screenFlash();
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   FEVER
+========================================================= */
+
+function activateFever(){
+
+    fever = true;
+
+    document
+        .getElementById(
+            "feverOverlay"
+        )
+        .classList.add(
+            "show"
+        );
+
+    effect(
+        "🔥 OVERDRIVE FEVER"
+    );
+
+    createBigExplosion();
+
+    comboSound();
+
+    setTimeout(()=>{
+
+        fever = false;
+
+        document
+            .getElementById(
+                "feverOverlay"
+            )
+            .classList.remove(
+                "show"
+            );
+
+    },12000);
+
+}
+
+
+/* =========================================================
+   RAGE
+========================================================= */
+
+function activateRage(){
+
+    rage = true;
+
+    effect(
+        "☠ THE VEIL IS ANGRY"
+    );
+
+    screenFlash();
+
+    shake();
+
+    createBigExplosion();
+
+    sound(
+        100,
+        .25,
+        "sawtooth",
+        .055,
+        -50
+    );
+
+    setTimeout(()=>{
+
+        rage = false;
+
+        effect(
+            "RAGE MODE ENDED"
+        );
+
+    },6000);
+
+}
+
+
+/* =========================================================
+   POWERUPS
+========================================================= */
+
+function maybeSpawnPowerUp(){
+
+    if(
+        document.querySelector(
+            ".powerup"
+        )
+    )
+        return;
+
+    if(
+        Math.random() > .065
+    )
+        return;
+
+    spawnPowerUp();
+
+}
+
+
+function spawnPowerUp(){
+
+    const types = [
+
+        {
+            class:"magnet",
+            icon:"🧲",
+            type:"magnet"
+        },
+
+        {
+            class:"freeze",
+            icon:"❄️",
+            type:"freeze"
+        },
+
+        {
+            class:"double",
+            icon:"×2",
+            type:"double"
+        },
+
+        {
+            class:"shield",
+            icon:"🛡️",
+            type:"shield"
+        }
+
+    ];
+
+    const selected =
+        types[
+            Math.floor(
+                Math.random() *
+                types.length
+            )
+        ];
+
+    const item =
+        document.createElement(
+            "div"
+        );
+
+    item.className =
+        "powerup " +
+        selected.class;
+
+    item.textContent =
+        selected.icon;
+
+    const rect =
+        arena.getBoundingClientRect();
+
+    item.style.left =
+        (
+            60 +
+            Math.random() *
+            (
+                rect.width -
+                120
+            )
+        ) +
+        "px";
+
+    item.style.top =
+        (
+            60 +
+            Math.random() *
+            (
+                rect.height -
+                120
+            )
+        ) +
+        "px";
+
+    arena.appendChild(
+        item
+    );
+
+    item.addEventListener(
+        "pointerdown",
+        ()=>{
+
+            collectPowerUp(
+                selected.type,
+                item
+            );
+
+        }
+    );
+
+    setTimeout(()=>{
+
+        if(
+            item.parentNode
+        ){
+
+            item.remove();
+
+        }
+
+    },5000);
+
+}
+
+
+function collectPowerUp(
+    type,
+    element
+){
+
+    if(
+        !gameRunning
+    )
+        return;
+
+    element.remove();
+
+    powerupSound();
+
+    vibrate(
+        [20,20,20]
+    );
+
+    createBigExplosion();
+
+
+    if(
+        type === "double"
+    ){
+
+        doubleScore = true;
+
+        effect(
+            "⚡ DOUBLE SCORE!"
+        );
+
+        setTimeout(()=>{
+
+            doubleScore = false;
+
+            effect(
+                "DOUBLE SCORE ENDED"
+            );
+
+        },7000);
+
+    }
+
+
+    if(
+        type === "freeze"
+    ){
+
+        frozen = true;
+
+        effect(
+            "❄️ TIME SLOWED!"
+        );
+
+        setTimeout(()=>{
+
+            frozen = false;
+
+        },6000);
+
+    }
+
+
+    if(
+        type === "magnet"
+    ){
+
+        magnet = true;
+
+        effect(
+            "🧲 MAGNET MODE!"
+        );
+
+        if(
+            currentTarget
+        ){
+
+            currentTarget.style.transition =
+                "left .7s ease,top .7s ease";
+
+            currentTarget.style.left =
+                "50%";
+
+            currentTarget.style.top =
+                "50%";
+
+        }
+
+        setTimeout(()=>{
+
+            magnet = false;
+
+        },6000);
+
+    }
+
+
+    if(
+        type === "shield"
+    ){
+
+        shield = true;
+
+        effect(
+            "🛡️ SHIELD READY!"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   VEIL BLAST
+========================================================= */
+
+function useBlast(){
+
+    if(
+        power < 100 ||
+        !gameRunning
+    )
+        return;
+
+    power = 0;
+
+    blast.classList.remove(
+        "ready"
+    );
+
+    const bonus =
+        1000 * level +
+        combo * 150;
+
+    score += bonus;
+
+    combo += 5;
+
+    bestCombo =
+        Math.max(
+            bestCombo,
+            combo
+        );
+
+    updateHUD();
+
+    effect(
+        "⚡ VEIL BLAST +" +
+        bonus
+    );
+
+    blastSound();
+
+    screenFlash();
+
+    shake();
+
+    createBigExplosion();
+
+    vibrate(
+        [30,40,70]
+    );
+
+    if(currentTarget){
+
+        currentTarget.classList.add(
+            "hit"
+        );
+
+        currentTarget = null;
+
+    }
+
+    clearTimeout(
+        targetTimer
+    );
+
+    setTimeout(()=>{
+
+        if(
+            gameRunning
+        ){
+
+            createTarget();
+
+        }
+
+    },300);
+
+}
+
+
+/* =========================================================
+   BOSS
+========================================================= */
+
+function startBoss(){
+
+    if(
+        bossActive
+    )
+        return;
+
+    bossActive = true;
+
+    clearTimeout(
+        targetTimer
+    );
+
+    if(currentTarget){
+
+        currentTarget.remove();
+
+        currentTarget = null;
+
+    }
+
+    bossHP = 100;
+
+    bossHits = 0;
+
+    document
+        .getElementById(
+            "bossBar"
+        )
+        .classList.add(
+            "show"
+        );
+
+    document
+        .getElementById(
+            "bossFill"
+        )
+        .style.width =
+        "100%";
+
+    effect(
+        "👹 THE FINAL VEIL"
+    );
+
+    bossSound();
+
+    screenFlash();
+
+    shake();
+
+    createBigExplosion();
+
+    createBossTarget();
+
+}
+
+
+function createBossTarget(){
+
+    if(
+        !bossActive ||
+        !gameRunning
+    )
+        return;
+
+    const boss =
+        document.createElement(
+            "div"
+        );
+
+    boss.className =
+        "target boss";
+
+    const core =
+        document.createElement(
+            "div"
+        );
+
+    core.className =
+        "core";
+
+    boss.appendChild(
+        core
+    );
+
+    const rect =
+        arena.getBoundingClientRect();
+
+    boss.style.left =
+        (
+            70 +
+            Math.random() *
+            (
+                rect.width -
+                140
+            )
+        ) +
+        "px";
+
+    boss.style.top =
+        (
+            110 +
+            Math.random() *
+            (
+                rect.height -
+                160
+            )
+        ) +
+        "px";
+
+    boss.addEventListener(
+        "pointerdown",
+        hitBoss
+    );
+
+    arena.appendChild(
+        boss
+    );
+
+    currentTarget =
+        boss;
+
+    targetTimer =
+        setTimeout(()=>{
+
+            if(
+                bossActive
+            ){
+
+                boss.remove();
+
+                combo = 0;
+
+                effect(
+                    "BOSS ESCAPED!"
+                );
+
+                createBossTarget();
+
+            }
+
+        },850);
+
+}
+
+
+function hitBoss(event){
+
+    if(
+        !bossActive ||
+        !gameRunning
+    )
+        return;
+
+    event.preventDefault();
+
+    clearTimeout(
+        targetTimer
+    );
+
+    bossHits++;
+
+    bossHP -= 12;
+
+    score +=
+        500 +
+        level * 100;
+
+    combo++;
+
+    bestCombo =
+        Math.max(
+            bestCombo,
+            combo
+        );
+
+    document
+        .getElementById(
+            "bossFill"
+        )
+        .style.width =
+        bossHP +
+        "%";
+
+    updateHUD();
+
+    bossHitSound();
+
+    vibrate(25);
+
+    createParticles(
+        event.clientX,
+        event.clientY,
+        true,
+        false
+    );
+
+    createRing(
+        event.clientX,
+        event.clientY,
+        true
+    );
+
+    popup(
+        event.clientX,
+        event.clientY,
+        "💥 BOSS HIT!"
+    );
+
+    currentTarget.remove();
+
+    currentTarget = null;
+
+    if(
+        bossHP <= 0
+    ){
+
+        defeatBoss();
+
+    }
+    else{
+
+        setTimeout(
+            createBossTarget,
+            120
+        );
+
+    }
+
+}
+
+
+function defeatBoss(){
+
+    bossActive = false;
+
+    score +=
+        5000 +
+        combo * 200;
+
+    combo += 10;
+
+    bestCombo =
+        Math.max(
+            bestCombo,
+            combo
+        );
+
+    effect(
+        "👑 BOSS DESTROYED!"
+    );
+
+    unlockAchievement(
+        "👑 VEIL SLAYER"
+    );
+
+    bossWinSound();
+
+    screenFlash();
+
+    shake();
+
+    createBigExplosion();
+
+    document
+        .getElementById(
+            "bossBar"
+        )
+        .classList.remove(
+            "show"
+        );
+
+    clearTimeout(
+        targetTimer
+    );
+
+    setTimeout(
+        endGame,
+        1100
+    );
+
+}
+
+
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+function unlockAchievement(
+    name
+){
+
+    if(
+        achievements.includes(
+            name
+        )
+    )
+        return;
+
+    achievements.push(
+        name
+    );
+
+    const box =
+        document.getElementById(
+            "achievement"
+        );
+
+    document.getElementById(
+        "achievementText"
+    ).textContent =
+        name;
+
+    box.classList.add(
+        "show"
+    );
+
+    achievementSound();
+
+    setTimeout(()=>{
+
+        box.classList.remove(
+            "show"
+        );
+
+    },2800);
+
+}
+
+
+/* =========================================================
+   VISUAL EFFECTS
+========================================================= */
+
+function popup(
+    x,
+    y,
+    text
+){
+
+    const p =
+        document.createElement(
+            "div"
+        );
+
+    p.className =
+        "popup";
+
+    p.textContent =
+        text;
+
+    p.style.left =
+        x +
+        "px";
+
+    p.style.top =
+        y +
+        "px";
+
+    document.body.appendChild(
+        p
+    );
+
+    setTimeout(
+        ()=>p.remove(),
+        750
+    );
+
+}
+
+
+function perfect(
+    x,
+    y
+){
+
+    const p =
+        document.createElement(
+            "div"
+        );
+
+    p.className =
+        "perfect";
+
+    p.textContent =
+        "✦ PERFECT ✦";
+
+    p.style.left =
+        x +
+        "px";
+
+    p.style.top =
+        y +
+        "px";
+
+    document.body.appendChild(
+        p
+    );
+
+    setTimeout(
+        ()=>p.remove(),
+        850
+    );
+
+}
+
+
+function effect(
+    text
+){
+
+    const e =
+        document.createElement(
+            "div"
+        );
+
+    e.className =
+        "effect";
+
+    e.textContent =
+        text;
+
+    document.body.appendChild(
+        e
+    );
+
+    setTimeout(
+        ()=>e.remove(),
+        1200
+    );
+
+}
+
+
+function createParticles(
+    x,
+    y,
+    gold=false,
+    diamond=false
+){
+
+    const count =
+        gold
+        ? 35
+        : diamond
+        ? 25
+        : 13;
+
+    for(
+        let i=0;
+        i<count;
+        i++
+    ){
+
+        const p =
+            document.createElement(
+                "div"
+            );
+
+        p.className =
+            "particle";
+
+        p.style.left =
+            x +
+            "px";
+
+        p.style.top =
+            y +
+            "px";
+
+        if(gold){
+
+            p.style.background =
+                "#ffd43b";
+
+            p.style.boxShadow =
+                "0 0 15px #ffd43b";
+
+        }
+
+        if(diamond){
+
+            p.style.background =
+                "#00f5ff";
+
+            p.style.boxShadow =
+                "0 0 15px #00f5ff";
+
+        }
+
+        const angle =
+            Math.random() *
+            Math.PI *
+            2;
+
+        const distance =
+            gold
+            ? 100 +
+              Math.random()*190
+            : 40 +
+              Math.random()*120;
+
+        p.style.setProperty(
+            "--x",
+            Math.cos(angle) *
+            distance +
+            "px"
+        );
+
+        p.style.setProperty(
+            "--y",
+            Math.sin(angle) *
+            distance +
+            "px"
+        );
+
+        document.body.appendChild(
+            p
+        );
+
+        setTimeout(
+            ()=>p.remove(),
+            1000
+        );
+
+    }
+
+}
+
+
+function createBigExplosion(){
+
+    for(
+        let i=0;
+        i<75;
+        i++
+    ){
+
+        const p =
+            document.createElement(
+                "div"
+            );
+
+        p.className =
+            "particle";
+
+        p.style.left =
+            "50%";
+
+        p.style.top =
+            "50%";
+
+        const angle =
+            Math.random() *
+            Math.PI *
+            2;
+
+        const distance =
+            100 +
+            Math.random()*500;
+
+        p.style.setProperty(
+            "--x",
+            Math.cos(angle) *
+            distance +
+            "px"
+        );
+
+        p.style.setProperty(
+            "--y",
+            Math.sin(angle) *
+            distance +
+            "px"
+        );
+
+        document.body.appendChild(
+            p
+        );
+
+        setTimeout(
+            ()=>p.remove(),
+            1000
+        );
+
+    }
+
+}
+
+
+function createRing(
+    x,
+    y,
+    gold=false
+){
+
+    const r =
+        document.createElement(
+            "div"
+        );
+
+    r.className =
+        "ring";
+
+    r.style.left =
+        x +
+        "px";
+
+    r.style.top =
+        y +
+        "px";
+
+    if(gold){
+
+        r.style.borderColor =
+            "#ffd43b";
+
+        r.style.boxShadow =
+            "0 0 25px #ffd43b";
+
+    }
+
+    document.body.appendChild(
+        r
+    );
+
+    setTimeout(
+        ()=>r.remove(),
+        700
+    );
+
+}
+
+
+function screenFlash(){
+
+    flash.classList.remove(
+        "active"
+    );
+
+    void flash.offsetWidth;
+
+    flash.classList.add(
+        "active"
+    );
+
+}
+
+
+function shake(){
+
+    document.body.classList.remove(
+        "shake"
+    );
+
+    void document.body.offsetWidth;
+
+    document.body.classList.add(
+        "shake"
+    );
+
+    setTimeout(()=>{
+
+        document.body.classList.remove(
+            "shake"
+        );
+
+    },320);
+
+}
+
+
+/* =========================================================
+   PAUSE
+========================================================= */
+
+function pauseGame(){
+
+    if(
+        !gameRunning
+    )
+        return;
+
+    paused = true;
+
+    buttonSound();
+
+    document
+        .getElementById(
+            "pause"
+        )
+        .classList.add(
+            "show"
+        );
+
+}
+
+
+function resumeGame(){
+
+    paused = false;
+
+    buttonSound();
+
+    document
+        .getElementById(
+            "pause"
+        )
+        .classList.remove(
+            "show"
+        );
+
+    if(
+        !bossActive
+    ){
+
+        createTarget();
+
+    }
+
+}
+
+
+function quitGame(){
+
+    gameRunning = false;
+
+    paused = false;
+
+    clearInterval(timer);
+
+    clearTimeout(targetTimer);
+
+    buttonSound();
+
+    document
+        .getElementById(
+            "pause"
+        )
+        .classList.remove(
+            "show"
+        );
+
+    document
+        .getElementById(
+            "gameScreen"
+        )
+        .classList.remove(
+            "active"
+        );
+
+    document
+        .getElementById(
+            "loginScreen"
+        )
+        .classList.add(
+            "active"
+        );
+
+}
+
+
+/* =========================================================
+   END GAME
+========================================================= */
+
+function endGame(){
+
+    if(
+        !gameRunning
+    )
+        return;
+
+    gameRunning = false;
+
+    clearInterval(timer);
+
+    clearTimeout(targetTimer);
+
+    if(currentTarget){
+
+        currentTarget.remove();
+
+        currentTarget = null;
+
+    }
+
+    document
+        .querySelectorAll(
+            ".powerup"
+        )
+        .forEach(
+            e=>e.remove()
+        );
+
+    const oldBest =
+        Number(
+            localStorage.getItem(
+                "neonVeilBest"
+            ) || 0
+        );
+
+    const newBest =
+        score >
+        oldBest;
+
+    if(newBest){
+
+        localStorage.setItem(
+            "neonVeilBest",
+            Math.round(score)
+        );
+
+    }
+
+    const total =
+        hits +
+        misses;
+
+    const accuracy =
+        total === 0
+        ? 100
+        : Math.round(
+            hits /
+            total *
+            100
+        );
+
+    document
+        .getElementById(
+            "gameScreen"
+        )
+        .classList.remove(
+            "active"
+        );
+
+    document
+        .getElementById(
+            "resultScreen"
+        )
+        .classList.add(
+            "active"
+        );
+
+    document
+        .getElementById(
+            "finalScore"
+        )
+        .textContent =
+        String(
+            Math.round(score)
+        ).padStart(
+            4,
+            "0"
+        );
+
+    document
+        .getElementById(
+            "resultScore"
+        )
+        .textContent =
+        Math.round(score);
+
+    document
+        .getElementById(
+            "finalHits"
+        )
+        .textContent =
+        hits;
+
+    document
+        .getElementById(
+            "finalCombo"
+        )
+        .textContent =
+        "x" +
+        bestCombo;
+
+    document
+        .getElementById(
+            "finalAccuracy"
+        )
+        .textContent =
+        accuracy +
+        "%";
+
+    document
+        .getElementById(
+            "rank"
+        )
+        .textContent =
+        getRank(score);
+
+    document
+        .getElementById(
+            "newRecord"
+        )
+        .style.display =
+        newBest
+        ? "block"
+        : "none";
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+    if(newBest){
+
+        message.textContent =
+            "🔥 NEW PERSONAL BEST!";
+
+    }
+    else if(
+        score >= 50000
+    ){
+
+        message.textContent =
+            "👑 You're officially a legend.";
+
+    }
+    else if(
+        score >= 30000
+    ){
+
+        message.textContent =
+            "💎 You're seriously dangerous.";
+
+    }
+    else if(
+        score >= 15000
+    ){
+
+        message.textContent =
+            "🔥 That was seriously good.";
+
+    }
+    else{
+
+        message.textContent =
+            "👀 Think you can beat this?";
+
+    }
+
+    resultSound();
+
+    screenFlash();
+
+    createBigExplosion();
+
+}
+
+
+/* =========================================================
+   RANK
+========================================================= */
+
+function getRank(
+    score
+){
+
+    if(
+        score >= 75000
+    )
+        return "👑 ABSOLUTE VEIL GOD";
+
+    if(
+        score >= 50000
+    )
+        return "👑 LEGEND OF THE VEIL";
+
+    if(
+        score >= 30000
+    )
+        return "💎 VELVET MASTER";
+
+    if(
+        score >= 15000
+    )
+        return "🔥 NEON HUNTER";
+
+    if(
+        score >= 9000
+    )
+        return "⚡ VEIL RUNNER";
+
+    if(
+        score >= 5000
+    )
+        return "✦ GLOW CHASER";
+
+    return "🌙 NOVICE OF THE VEIL";
+
+}
+
+
+/* =========================================================
+   RESTART
+========================================================= */
+
+function restartGame(){
+
+    buttonSound();
+
+    document
+        .getElementById(
+            "resultScreen"
+        )
+        .classList.remove(
+            "active"
+        );
+
+    document
+        .getElementById(
+            "gameScreen"
+        )
+        .classList.add(
+            "active"
+        );
+
+    resetGame();
+
+    document
+        .getElementById(
+            "arenaMessage"
+        )
+        .style.display =
+        "none";
+
+    setTimeout(()=>{
+
+        initAudio();
+
+        if(
+            audio &&
+            audio.state ===
+            "suspended"
+        ){
+
+            audio.resume();
+
+        }
+
+        gameRunning = true;
+
+        runStartedAt =
+            Date.now();
+
+        startCountdown();
+
+    },300);
+
+}
+
+
+/* =========================================================
+   CHALLENGE MESSAGE
+========================================================= */
+
+function getChallengeText(){
+
+    const total =
+        hits +
+        misses;
+
+    const accuracy =
+        total === 0
+        ? 100
+        : Math.round(
+            hits /
+            total *
+            100
+        );
+
+    const modeText =
+        selectedMode === "attack"
+        ? "TIME ATTACK"
+        : selectedMode === "one"
+        ? "ONE LIFE"
+        : "CLASSIC";
+
+    const page =
+        window.location.href;
+
+    return `🌌 NEON VEIL CHALLENGE 🌌
+
+🔥 ${playerName} just scored ${Math.round(score).toLocaleString()} points!
+
+🏆 Rank: ${getRank(score)}
+🎯 Targets Hit: ${hits}
+⚡ Best Combo: x${bestCombo}
+🎯 Accuracy: ${accuracy}%
+🎮 Mode: ${modeText}
+
+💀 THINK YOU CAN BEAT THIS?
+
+Play NEON VEIL for 60 seconds, beat the score, and take the crown! 👑
+
+🎯 TARGET SCORE: ${Math.round(score).toLocaleString()}
+
+👇 YOUR TURN — BEAT THE SCORE!
+
+${page}
+
+— VELVET DIARY ✦
+
+#NeonVeil #VelvetDiary #Challenge`;
+
+}
+
+
+/* =========================================================
+   OPEN CHALLENGE
+========================================================= */
+
+function openChallenge(){
+
+    buttonSound();
+
+    const total =
+        hits +
+        misses;
+
+    const accuracy =
+        total === 0
+        ? 100
+        : Math.round(
+            hits /
+            total *
+            100
+        );
+
+    document.getElementById(
+        "challengePlayer"
+    ).textContent =
+        playerName;
+
+    document.getElementById(
+        "challengeScore"
+    ).textContent =
+        Math.round(score)
+        .toLocaleString();
+
+    document.getElementById(
+        "challengeHits"
+    ).textContent =
+        hits;
+
+    document.getElementById(
+        "challengeCombo"
+    ).textContent =
+        "x" +
+        bestCombo;
+
+    document.getElementById(
+        "challengeAccuracy"
+    ).textContent =
+        accuracy +
+        "%";
+
+    document
+        .getElementById(
+            "challengeModal"
+        )
+        .classList.add(
+            "show"
+        );
+
+}
+
+
+/* =========================================================
+   CLOSE CHALLENGE
+========================================================= */
+
+function closeChallenge(){
+
+    buttonSound();
+
+    document
+        .getElementById(
+            "challengeModal"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+/* =========================================================
+   SHARE CHALLENGE
+========================================================= */
+
+async function shareChallenge(){
+
+    buttonSound();
+
+    const text =
+        getChallengeText();
+
+    if(
+        navigator.share
+    ){
+
+        try{
+
+            await navigator.share({
+
+                title:
+                    "🔥 NEON VEIL CHALLENGE",
+
+                text:
+                    text
+
+            });
+
+            effect(
+                "📲 CHALLENGE SENT!"
+            );
+
+        }
+        catch(e){}
+
+    }
+    else{
+
+        copyChallenge();
+
+    }
+
+}
+
+
+/* =========================================================
+   COPY CHALLENGE
+========================================================= */
+
+async function copyChallenge(){
+
+    buttonSound();
+
+    const text =
+        getChallengeText();
+
+    try{
+
+        await navigator.clipboard.writeText(
+            text
+        );
+
+        effect(
+            "📋 CHALLENGE COPIED!"
+        );
+
+        vibrate(
+            [20,20,20]
+        );
+
+    }
+    catch(e){
+
+        const temp =
+            document.createElement(
+                "textarea"
+            );
+
+        temp.value =
+            text;
+
+        document.body.appendChild(
+            temp
+        );
+
+        temp.select();
+
+        document.execCommand(
+            "copy"
+        );
+
+        temp.remove();
+
+        effect(
+            "📋 COPIED!"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   CURSOR
+========================================================= */
+
+document.addEventListener(
+    "mousemove",
+    function(e){
+
+        const cursor =
+            document.getElementById(
+                "cursor"
+            );
+
+        cursor.style.left =
+            e.clientX +
+            "px";
+
+        cursor.style.top =
+            e.clientY +
+            "px";
+
+    }
+);
+
+
+document.addEventListener(
+    "mouseover",
+    function(e){
+
+        if(
+            e.target.closest(
+                "button,input,.target,.powerup"
+            )
+        ){
+
+            document.body.classList.add(
+                "cursor-hover"
+            );
+
+        }
+
+    }
+);
+
+
+document.addEventListener(
+    "mouseout",
+    function(e){
+
+        if(
+            e.target.closest(
+                "button,input,.target,.powerup"
+            )
+        ){
+
+            document.body.classList.remove(
+                "cursor-hover"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ENTER KEY
+========================================================= */
+
+document
+    .getElementById(
+        "playerName"
+    )
+    .addEventListener(
+        "keydown",
+        e=>{
+
+            if(
+                e.key === "Enter"
+            ){
+
+                startGame();
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   SPACE BLAST
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(
+            e.code === "Space"
+        ){
+
+            e.preventDefault();
+
+            if(
+                power >= 100 &&
+                gameRunning
+            ){
+
+                useBlast();
+
+            }
+
+        }
+
+        if(
+            e.code === "Escape"
+        ){
+
+            if(
+                document
+                    .getElementById(
+                        "challengeModal"
+                    )
+                    .classList.contains(
+                        "show"
+                    )
+            ){
+
+                closeChallenge();
+
+                return;
+
+            }
+
+            if(
+                gameRunning
+            ){
+
+                if(paused){
+
+                    resumeGame();
+
+                }
+                else{
+
+                    pauseGame();
+
+                }
+
+            }
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   AUDIO RESUME
+========================================================= */
+
+document.addEventListener(
+    "pointerdown",
+    function(){
+
+        if(
+            audio &&
+            audio.state ===
+            "suspended"
+        ){
+
+            audio.resume();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   MOBILE TOUCH RIPPLE
+========================================================= */
+
+document.addEventListener(
+    "pointerdown",
+    function(e){
+
+        if(
+            e.pointerType ===
+            "touch"
+        ){
+
+            const ripple =
+                document.createElement(
+                    "div"
+                );
+
+            ripple.className =
+                "ring";
+
+            ripple.style.left =
+                e.clientX +
+                "px";
+
+            ripple.style.top =
+                e.clientY +
+                "px";
+
+            ripple.style.borderColor =
+                "#00f5ff";
+
+            document.body.appendChild(
+                ripple
+            );
+
+            setTimeout(
+                ()=>ripple.remove(),
+                700
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   PAGE VISIBILITY
+========================================================= */
+
+document.addEventListener(
+    "visibilitychange",
+    function(){
+
+        if(
+            document.hidden &&
+            gameRunning &&
+            !paused
+        ){
+
+            pauseGame();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   BUTTON SOUND FOR ALL BUTTONS
+========================================================= */
+
+document.addEventListener(
+    "pointerdown",
+    function(e){
+
+        if(
+            e.target.closest(
+                "button"
+            )
+        ){
+
+            initAudio();
+
+            if(
+                audio &&
+                audio.state ===
+                "suspended"
+            ){
+
+                audio.resume();
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+
+<style id="neon-veil-addons">
+/* ADD-ON FEATURES — original visual system untouched */
+.streak-burst{
+  position:fixed;left:50%;top:20%;z-index:740;pointer-events:none;
+  transform:translateX(-50%);font-family:'Orbitron',sans-serif;
+  font-size:clamp(11px,2vw,16px);font-weight:900;letter-spacing:3px;
+  color:#00f5ff;text-shadow:0 0 12px #00f5ff,0 0 35px rgba(0,245,255,.8);
+  animation:streakBurst .95s forwards;
+}
+@keyframes streakBurst{
+  0%{opacity:0;transform:translate(-50%,12px) scale(.6)}
+  20%,65%{opacity:1;transform:translate(-50%,0) scale(1.08)}
+  100%{opacity:0;transform:translate(-50%,-35px) scale(1)}
+}
+.relic{
+  position:absolute;width:52px;height:52px;border-radius:16px;z-index:14;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+  font-family:'Orbitron',sans-serif;font-size:18px;font-weight:900;
+  color:#fff;background:linear-gradient(135deg,rgba(255,46,166,.18),rgba(0,245,255,.18));
+  border:1px solid rgba(255,255,255,.5);
+  box-shadow:0 0 18px #ff2ea6,0 0 42px rgba(0,245,255,.35);
+  transform:rotate(45deg);animation:relicIn .35s cubic-bezier(.16,1,.3,1),relicFloat 1s ease-in-out infinite alternate;
+}
+.relic span{transform:rotate(-45deg)}
+@keyframes relicIn{from{opacity:0;transform:rotate(45deg) scale(.1)}to{opacity:1;transform:rotate(45deg) scale(1)}}
+@keyframes relicFloat{to{margin-top:-9px}}
+.second-chance{
+  position:fixed;inset:0;z-index:960;display:flex;align-items:center;justify-content:center;
+  background:rgba(3,0,8,.7);backdrop-filter:blur(12px);pointer-events:none;opacity:0;
+  transition:.25s;
+}
+.second-chance.show{opacity:1;pointer-events:auto}
+.second-chance .sc-box{
+  width:min(390px,90%);padding:28px 22px;text-align:center;border-radius:24px;
+  border:1px solid rgba(255,46,166,.25);background:rgba(15,5,25,.9);
+  box-shadow:0 0 80px rgba(255,0,140,.15)
+}
+.second-chance h3{font-family:'Orbitron',sans-serif;font-size:20px;letter-spacing:2px;margin-bottom:8px}
+.second-chance p{color:#999;font-size:10px;line-height:1.7;margin-bottom:15px}
+.second-chance b{color:#00f5ff}
+.sc-btn{width:100%;padding:14px;border:0;border-radius:13px;color:#fff;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:900;letter-spacing:1px;cursor:pointer;background:linear-gradient(90deg,#ff008c,#8d32ff,#ff008c);background-size:200%;animation:buttonGradient 4s linear infinite}
+@media(max-width:700px){.relic{width:46px;height:46px}.streak-burst{top:18%}}
+</style>
+
+<div class="second-chance" id="secondChance">
+  <div class="sc-box">
+    <h3>⚡ ONE MORE RUN</h3>
+    <p>Your run is about to end.<br><b>Spend 50 VEIL POWER</b> to restore one life and keep your combo chase alive.</p>
+    <button class="sc-btn" onclick="acceptSecondChance()">REVIVE THE VEIL ✦</button>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   NEON VEIL ADDICTIVE EXTENSION
+   The original game remains intact; these features layer on top.
+========================================================= */
+(function(){
+  const LS_BEST="neonVeilBest";
+  const LS_HALL="neonVeilHall";
+  const LS_NAME="neonVeilPlayer";
+  let relicTimer=null;
+  let surgeClaimed={};
+  let reviveUsed=false;
+
+  function safeJSON(key,fallback){
+    try{return JSON.parse(localStorage.getItem(key)||"")||fallback}catch(e){return fallback}
+  }
+  function saveJSON(key,val){try{localStorage.setItem(key,JSON.stringify(val))}catch(e){}}
+
+  const nameInput=document.getElementById("playerName");
+  try{
+    const saved=localStorage.getItem(LS_NAME);
+    if(saved && !nameInput.value) nameInput.value=saved;
+  }catch(e){}
+
+  const originalStart=window.startGame;
+  window.startGame=function(){
+    const n=(nameInput.value||"").trim();
+    if(n.length>=2) try{localStorage.setItem(LS_NAME,n)}catch(e){}
+    reviveUsed=false; surgeClaimed={};
+    return originalStart.apply(this,arguments);
+  };
+
+  const originalReset=window.resetGame;
+  window.resetGame=function(){
+    clearTimeout(relicTimer);
+    document.querySelectorAll(".relic").forEach(x=>x.remove());
+    reviveUsed=false; surgeClaimed={};
+    return originalReset.apply(this,arguments);
+  };
+
+  function addStreakText(text){
+    const x=document.createElement("div");
+    x.className="streak-burst";
+    x.textContent=text;
+    document.body.appendChild(x);
+    setTimeout(()=>x.remove(),1000);
+  }
+
+  function addBonus(amount,label){
+    if(typeof score==="undefined") return;
+    score+=amount;
+    if(typeof updateHUD==="function") updateHUD();
+    if(typeof effect==="function") effect(label+" +"+amount.toLocaleString());
+    if(typeof createBigExplosion==="function") createBigExplosion();
+    if(typeof sound==="function") sound(980,.12,"triangle",.045,240);
+    if(typeof vibrate==="function") vibrate([18,25,35]);
+  }
+
+  /* Momentum rewards: no UI change, just escalating micro-rewards. */
+  const originalHit=window.hitTarget;
+  window.hitTarget=function(event){
+    const before=typeof combo==="number"?combo:0;
+    const result=originalHit.apply(this,arguments);
+    const after=typeof combo==="number"?combo:0;
+
+    if(after>0 && after%7===0 && !surgeClaimed[after]){
+      surgeClaimed[after]=true;
+      addStreakText("✦ STREAK SURGE x"+after+" ✦");
+      addBonus(350+after*35,"⚡ STREAK SURGE");
+    }
+
+    /* Rare relic after sustained play. */
+    if(after>=12 && after%12===0){
+      spawnRelic();
+    }
+    return result;
+  };
+
+  function spawnRelic(){
+    if(!gameRunning || paused || bossActive || document.querySelector(".relic")) return;
+    clearTimeout(relicTimer);
+    const r=document.createElement("div");
+    r.className="relic";
+    r.innerHTML="<span>✦</span>";
+    const rect=arena.getBoundingClientRect();
+    r.style.left=(70+Math.random()*Math.max(40,rect.width-140))+"px";
+    r.style.top=(70+Math.random()*Math.max(40,rect.height-140))+"px";
+    arena.appendChild(r);
+
+    const collect=()=>{
+      if(!gameRunning || paused){ return; }
+      r.remove();
+      clearTimeout(relicTimer);
+      addBonus(1500+level*500,"💠 VEIL RELIC");
+      power=Math.min(100,power+25);
+      updateHUD();
+      perfect(innerWidth/2,innerHeight/2);
+    };
+    r.addEventListener("pointerdown",collect,{once:true});
+    relicTimer=setTimeout(()=>{if(r.parentNode)r.remove()},4500);
+  }
+
+  /* Make the existing magnet genuinely useful for the next target. */
+  const originalCreate=window.createTarget;
+  window.createTarget=function(){
+    const result=originalCreate.apply(this,arguments);
+    if(typeof magnet!=="undefined" && magnet && currentTarget){
+      const t=currentTarget;
+      setTimeout(()=>{
+        if(t===currentTarget && t.parentNode && gameRunning && !paused){
+          const rect=arena.getBoundingClientRect();
+          t.style.transition="left .45s cubic-bezier(.16,1,.3,1),top .45s cubic-bezier(.16,1,.3,1)";
+          t.style.left=(rect.width/2)+"px";
+          t.style.top=(rect.height/2)+"px";
+        }
+      },20);
+    }
+    return result;
+  };
+
+  /* Local hall-of-fame: honest, device-only. */
+  const originalEnd=window.endGame;
+  window.endGame=function(){
+    const beforeBest=Number(localStorage.getItem(LS_BEST)||0);
+    const result=originalEnd.apply(this,arguments);
+    try{
+      const row={
+        name:playerName||"PLAYER",
+        score:Math.round(score||0),
+        combo:bestCombo||0,
+        mode:selectedMode||"classic",
+        date:new Date().toLocaleDateString()
+      };
+      let hall=safeJSON(LS_HALL,[]);
+      hall.push(row);
+      hall=hall.sort((a,b)=>b.score-a.score).slice(0,8);
+      saveJSON(LS_HALL,hall);
+      if(row.score>beforeBest){
+        setTimeout(()=>addStreakText("👑 LOCAL RECORD SAVED"),900);
+      }
+    }catch(e){}
+    return result;
+  };
+
+  /* Second chance: only when the player has earned enough power and hasn't used it. */
+  const originalMiss=window.missTarget;
+  window.missTarget=function(){
+    if(gameRunning && !paused && typeof lives==="number" && lives===1 && !reviveUsed && power>=50){
+      const beforeMisses=misses;
+      originalMiss.apply(this,arguments);
+      if(gameRunning && lives<=0 && misses>beforeMisses){
+        reviveUsed=true;
+        paused=true;
+        document.getElementById("secondChance").classList.add("show");
+        return;
+      }
+      return;
+    }
+    return originalMiss.apply(this,arguments);
+  };
+
+  window.acceptSecondChance=function(){
+    if(!gameRunning) return;
+    document.getElementById("secondChance").classList.remove("show");
+    power=Math.max(0,power-50);
+    lives=1;
+    combo=Math.max(3,Math.floor(combo/2));
+    paused=false;
+    updateHUD();
+    livesEl.textContent="♥";
+    effect("⚡ VEIL REVIVED!");
+    sound(260,.12,"sawtooth",.045,500);
+    createBigExplosion();
+    vibrate([30,40,70]);
+    createTarget();
+  };
+
+  /* If the browser/tab is hidden, the original pause remains the authority. */
+  document.addEventListener("keydown",e=>{
+    if(e.key==="r"||e.key==="R"){
+      if(gameRunning && power>=100 && !paused) useBlast();
+    }
+  });
+
+  /* Save score immediately whenever result screen is reached. */
+  window.addEventListener("beforeunload",()=>{
+    try{
+      const hall=safeJSON(LS_HALL,[]);
+      if(hall.length) saveJSON(LS_HALL,hall);
+    }catch(e){}
+  });
+
+  /* Close revive overlay safely with Escape. */
+  document.addEventListener("keydown",e=>{
+    if(e.key==="Escape"){
+      const box=document.getElementById("secondChance");
+      if(box.classList.contains("show")){
+        box.classList.remove("show");
+        gameRunning=false;
+        paused=false;
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+
+</html>
