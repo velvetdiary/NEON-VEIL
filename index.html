@@ -14,10 +14,7 @@
 
 <style>
 
-/* =========================================================
-   VELVET DIARY
-   NEON VEIL — ULTRA EDITION
-========================================================= */
+
 
 @import url(
 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap'
@@ -195,9 +192,6 @@ body{
 }
 
 
-/* =========================================================
-   BRAND
-========================================================= */
 
 .brand{
 
@@ -8052,7 +8046,7 @@ document.addEventListener(
     }
   });
 
-  /* Save score immediately whenever result screen is reached. */
+ 
   window.addEventListener("beforeunload",()=>{
     try{
       const hall=safeJSON(LS_HALL,[]);
@@ -8060,7 +8054,7 @@ document.addEventListener(
     }catch(e){}
   });
 
-  /* Close revive overlay safely with Escape. */
+
   document.addEventListener("keydown",e=>{
     if(e.key==="Escape"){
       const box=document.getElementById("secondChance");
